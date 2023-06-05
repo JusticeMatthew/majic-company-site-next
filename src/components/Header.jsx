@@ -5,15 +5,15 @@ import { ScrollLink } from '@/components';
 
 const Header = () => {
   return (
-    <header className="h-20 z-10 fixed center-column backdrop-blur-md rounded-2xl mt-4 flex justify-between px-4 items-center text-text">
-      <ScrollLink to="home" className="cursor-pointer flex gap-2">
+    <header className="fixed z-10 flex items-center justify-between h-20 px-4 mt-4 center-column backdrop-blur-md rounded-2xl text-text">
+      <ScrollLink to="home" className="flex gap-2 cursor-pointer">
         <Image
           src="/images/logo-svg.svg"
           alt="company logo"
           width={50}
           height={50}
         />
-        <h1 className="font-semibold text-2xl leading-7">
+        <h1 className="text-2xl font-semibold leading-7">
           Majic
           <br />
           Webdesign
