@@ -1,27 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import-normalize;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .center-column {
+    @apply px-4 w-[75rem];
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-image: linear-gradient(
+    to right,
+    rgba(248, 250, 252, 0.6),
+    rgba(0, 167, 225, 0.25)
+  );
+  background-image: linear-gradient(
+    to left,
+    rgba(115, 92, 221, 0.2),
+    rgba(27, 82, 153, 0.4)
+  );
 }
+
+/* <div className="from-seasalt from-60% to-picton/25 bg-gradient-to-r relative">
+<div className="h-full w-full from-purp/40 to-yinmin/75 bg-gradient-to-r opacity-60 absolute" /> */
