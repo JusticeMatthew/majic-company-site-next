@@ -28,10 +28,11 @@ export default function Home() {
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setPos(latest);
+    console.log(latest);
     const body = document.body;
 
     if (latest < 2200) {
-      body.style.backgroundColor = 'initial';
+      body.style.backgroundColor = '#F8FAFC';
       body.style.backgroundImage = `linear-gradient(
         to right,
         rgba(248, 250, 252, 0.6),
@@ -40,13 +41,18 @@ export default function Home() {
       body.style.backgroundImage = `linear-gradient(
         to left,
         rgba(115, 92, 221, 0.2),
-        rgba(27, 82, 153, 0.4)
+        rgba(27, 82, 153, 0.4) 
       )`;
     }
 
     if (latest >= 2200) {
       body.style.backgroundColor = '#0B112B';
       body.style.backgroundImage = `url("/images/dark-bg-texture.svg")`;
+      body.style.backgroundImage = `linear-gradient(
+        to left,
+        rgba(115, 92, 221, 0.2),
+        rgba(27, 82, 153, 0.4) 
+      )`;
     }
   });
 

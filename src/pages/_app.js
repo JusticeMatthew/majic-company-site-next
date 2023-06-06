@@ -9,8 +9,7 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/images/favicon.ico" />
         <meta
           name="description"
-          content="We help local business find new customers online 
-          and grow their business through stand-out websites & videos."
+          content="We help local business find new customers online and grow their business through stand-out websites & videos."
         />
         <meta
           name="viewport"
@@ -19,8 +18,7 @@ export default function App({ Component, pageProps }) {
         <meta property="og:title" content="Majic Webdesign" />
         <meta
           property="og:description"
-          content="We help local business find new customers online 
-          and grow their business through stand-out websites & videos."
+          content="We help local business find new customers online and grow their business through stand-out websites & videos."
         />
         <meta property="og:image" content="/og-logo.png" />
       </Head>

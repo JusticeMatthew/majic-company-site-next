@@ -1,9 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ScrollLink } from '@/components';
 
 const Header = ({ pos }) => {
+  const aboutPosition = pos > 600 && pos < 1800 ? true : false;
+  const examplePosition = pos > 2150 && pos < 2900 ? true : false;
+
   return (
     <header
       id="header"
@@ -26,16 +28,17 @@ const Header = ({ pos }) => {
       </ScrollLink>
       <nav className="flex gap-2">
         {[
-          ['about', 'About Us'],
-          ['examples', 'Examples'],
-          ['services', 'Services'],
-          ['contact', 'Contact'],
+          ['about', 'About Us', aboutPosition],
+          ['examples', 'Examples', examplePosition],
+          ['services', 'Services', false],
+          ['contact', 'Contact', false],
         ].map((item, idx) => (
           <ScrollLink
             key={idx}
             to={item[0]}
-            active="bg-primary-gradient bg-bottom bg-[length:100%_6px] bg-no-repeat hover:bg-[length:100%_100%] transition-[background-size] rounded-xl"
-            className="py-2 px-3 font-semibold text-lg bg-primary-gradient bg-bottom bg-[length:100%_0%] bg-no-repeat hover:bg-[length:100%_100%] transition-[background-size] rounded-xl hover:text-seasalt"
+            className={`${
+              item[2] ? 'bg-bottom bg-[length:100%_6px]' : ''
+            } py-2 px-3 font-semibold text-lg bg-primary-gradient bg-bottom bg-[length:100%_0%] bg-no-repeat hover:bg-[length:100%_100%] transition-[background-size] rounded-xl hover:text-seasalt`}
           >
             <p>{item[1]}</p>
           </ScrollLink>
