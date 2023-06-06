@@ -10,6 +10,7 @@ module.exports = {
         yinmin: '#1B5299',
         purp: '#735CDD',
         picton: '#00A7E1',
+        darkBlue: '#0B112B',
       },
       fontFamily: {
         inter: ['var(--font-inter)', 'sans-serif'],

@@ -19,12 +19,12 @@ const ScrollingWords = () => {
         >
           {['pocus', 'lumos', 'abracadabra', 'presto', 'alakazam', 'hocus'].map(
             (item, idx) => (
-              <>
-                <span key={idx}>{item}</span>
+              <React.Fragment key={idx}>
+                <span>{item}</span>
                 <span className="relative inline w-8 h-8">
                   <Image src="/images/logo-svg.svg" alt="company logo" fill />
                 </span>
-              </>
+              </React.Fragment>
             ),
           )}
         </motion.p>
