@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
 import scrollDown from '@/scrollDown.json';
-import { Button } from '@/components';
+import { Button, ScrollLink } from '@/components';
 
 const Landing = () => {
   return (
@@ -25,10 +25,13 @@ const Landing = () => {
         quote.
       </p>
       <Button className="mt-10">Get a free quote</Button>
-      <div className="absolute flex items-center justify-center bottom-12">
-        <div className="absolute w-8 h-12 rounded-full bg-primary-gradient" />
-        <Lottie animationData={scrollDown} className="absolute w-12 h-12" />
-      </div>
+      <ScrollLink to="about">
+        <div className="absolute flex items-center justify-center bottom-12">
+          <div className="absolute w-8 h-12 rounded-full bg-primary-gradient" />
+          <Lottie animationData={scrollDown} className="absolute w-12 h-12" />
+        </div>
+      </ScrollLink>
+      {/*BG items*/}
       <motion.div
         animate={{
           y: [0, -20, 10, -15, 15, -20, 20],
@@ -39,7 +42,7 @@ const Landing = () => {
             repeat: Infinity,
           },
         }}
-        className="w-80 h-80 absolute opacity-25 left-[-20rem] bottom-40"
+        className="w-80 h-80 absolute opacity-25 left-[-20rem] bottom-40 pointer-events-none"
       >
         <Image src="/images/logo-svg.svg" alt="company logo" fill />
       </motion.div>
@@ -53,7 +56,7 @@ const Landing = () => {
             repeat: Infinity,
           },
         }}
-        className="w-80 h-80 absolute opacity-25 right-[-20rem] top-40"
+        className="w-80 h-80 absolute opacity-25 right-[-20rem] top-40 pointer-events-none"
       >
         <Image src="/images/logo-svg.svg" alt="company logo" fill />
       </motion.div>
