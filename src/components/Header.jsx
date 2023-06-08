@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { ScrollLink } from '@/components';
 
 const Header = ({ pos }) => {
-  const aboutPosition = pos > 600 && pos < 1800 ? true : false;
+  const aboutPosition = pos > 700 && pos < 1800 ? true : false;
   const examplePosition = pos > 2150 && pos < 2900 ? true : false;
 
   return (
