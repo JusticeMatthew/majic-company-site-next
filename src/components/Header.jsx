@@ -23,7 +23,7 @@ const Header = ({ pos }) => {
         <h1 className="text-2xl font-semibold leading-7">
           Majic
           <br />
-          Webdesign
+          Web Design
         </h1>
       </ScrollLink>
       <nav className="flex gap-2">

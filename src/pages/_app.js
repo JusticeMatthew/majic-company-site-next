@@ -5,7 +5,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Majic Webdesign</title>
+        <title>Majic Web Design</title>
         <link rel="icon" href="/images/favicon.ico" />
         <meta
           name="description"
@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }) {
           name="viewport"
           content="width=device-width,initial-scale=1"
         ></meta>
-        <meta property="og:title" content="Majic Webdesign" />
+        <meta property="og:title" content="Majic Web Design" />
         <meta
           property="og:description"
           content="We help local business find new customers online and grow their business through stand-out websites & videos."
