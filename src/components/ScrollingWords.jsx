@@ -15,7 +15,7 @@ const ScrollingWords = () => {
           transition={{
             duration: 2,
           }}
-          className="flex items-center overflow-visible text-transparent uppercase font-calistoga bg-primary-gradient text-9xl bg-clip-text"
+          className="flex items-center overflow-visible uppercase text-gradient font-calistoga text-9xl"
         >
           {['pocus', 'lumos', 'abracadabra', 'presto', 'alakazam', 'hocus'].map(
             (item, idx) => (

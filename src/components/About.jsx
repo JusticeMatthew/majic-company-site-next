@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import benefits from '@/data/benefits';
+import benefits from '@/constants/benefits';
 import { MiniLogoSparkles, Button } from '@/components';
 
 const About = () => {
@@ -15,9 +15,7 @@ const About = () => {
             <p className="text-5xl font-calistoga">
               Running your own business is
               <br />
-              <span className="text-transparent bg-primary-gradient bg-clip-text">
-                tough enough
-              </span>
+              <span className="text-gradient">tough enough</span>
             </p>
             <p className="mb-6 leading-5 w-80">
               Thats why Majic wants to provide a one stop shop for businesses
@@ -45,9 +43,7 @@ const About = () => {
             <MiniLogoSparkles className="invisible -bottom-5 -right-5 group-hover:visible" />
             <Image src={item.icon} alt={item.alt} width={140} height={40} />
             <p className="mt-10 mb-6 text-4xl text-center text-text font-calistoga">
-              <span className="text-transparent bg-primary-gradient bg-clip-text">
-                {item.topText}
-              </span>
+              <span className="text-gradient">{item.topText}</span>
               <br />
               {item.bottomText}
             </p>

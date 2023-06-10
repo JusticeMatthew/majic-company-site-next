@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
           property="og:description"
           content="We help local business find new customers online and grow their business through stand-out websites & videos."
         />
-        <meta property="og:image" content="/og-logo.png" />
+        <meta property="og:image" content="/images/logo-svg.svg" />
       </Head>
       <Component {...pageProps} />
     </>

@@ -15,9 +15,7 @@ const Landing = () => {
         We build beautiful websites
         <br />
         for great businesses like&nbsp;
-        <span className="text-transparent bg-primary-gradient bg-clip-text">
-          yours
-        </span>
+        <span className="text-gradient">yours</span>
       </h2>
       <p className="w-5/12 text-lg">
         We help local business find new customers online and grow their business
