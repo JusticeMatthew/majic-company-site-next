@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import benefits from '@/constants/benefits';
 import { MiniLogoSparkles, Button } from '@/components';
 
@@ -35,7 +36,10 @@ const About = () => {
           </div>
         </div>
         {benefits.map((item, idx) => (
-          <div
+          <motion.div
+            whileInView={{ x: 0, opacity: 1 }}
+            initial={{ x: -100, opacity: 0 }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
             key={idx}
             className="flex flex-col items-center justify-evenly p-14 bg-seasalt rounded-2xl h-[30rem] relative group shadow"
           >
@@ -48,7 +52,7 @@ const About = () => {
               {item.bottomText}
             </p>
             <p className="leading-5 text-center text-text">{item.content}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

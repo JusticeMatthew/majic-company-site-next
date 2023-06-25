@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { Inter, Calistoga } from 'next/font/google';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
+import ToastProvider from '@/providers/ToastProvider';
 import {
   Header,
   Landing,
   About,
   Examples,
+  Services,
+  Contact,
+  Footer,
   ScrollingWords,
   SmoothScroll,
 } from '@/components';
@@ -67,6 +71,11 @@ export default function Home() {
           <About />
           <ScrollingWords />
           <Examples />
+          <Services />
+          <ToastProvider>
+            <Contact />
+          </ToastProvider>
+          <Footer />
         </main>
       </SmoothScroll>
     </div>

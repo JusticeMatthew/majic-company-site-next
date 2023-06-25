@@ -7,3 +7,6 @@ export { default as MiniLogoSparkles } from './MiniLogoSparkles';
 export { default as ScrollingWords } from './ScrollingWords';
 export { default as SmoothScroll } from './SmoothScroll';
 export { default as Examples } from './Examples';
+export { default as Services } from './Services';
+export { default as Contact } from './Contact';
+export { default as Footer } from './Footer';
