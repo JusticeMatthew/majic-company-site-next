@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Inter, Calistoga } from 'next/font/google';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
+import { ScrollerMotion } from 'scroller-motion';
 import ToastProvider from '@/providers/ToastProvider';
 import {
   Header,
@@ -11,7 +12,6 @@ import {
   Contact,
   Footer,
   ScrollingWords,
-  SmoothScroll,
 } from '@/components';
 
 const inter = Inter({
@@ -62,13 +62,11 @@ export default function Home() {
 
   return (
     <div
-      className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text flex justify-center`}
+      className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text flex justify-center w-screen`}
     >
-      <div className="w-screen max-w-[72rem]">
-        <Header pos={pos} />
-      </div>
-      <SmoothScroll>
-        <main className="w-screen max-w-[75rem]">
+      <Header pos={pos} />
+      <ScrollerMotion>
+        <main className="w-screen max-w-[75rem] mx-auto">
           <Landing />
           <About />
           <ScrollingWords />
@@ -79,7 +77,7 @@ export default function Home() {
           </ToastProvider>
           <Footer />
         </main>
-      </SmoothScroll>
+      </ScrollerMotion>
     </div>
   );
 }

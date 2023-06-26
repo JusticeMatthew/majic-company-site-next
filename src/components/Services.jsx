@@ -7,7 +7,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="flex items-center w-full px-4 h-[50vh] text-seasalt"
+      className="mx-6 flex items-center max-w-full px-4 h-[50vh] text-seasalt"
     >
       <motion.div
         whileInView={{ opacity: 1 }}

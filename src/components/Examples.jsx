@@ -6,7 +6,7 @@ const Examples = () => {
   return (
     <section
       id="examples"
-      className="flex items-center justify-center w-full h-screen text-text"
+      className="flex items-center justify-center h-screen max-w-full mx-6 text-text"
     >
       <div className="w-full h-[40rem] bg-seasalt rounded-2xl relative flex">
         <div className="h-[40rem] w-80 relative bg-[#18181B] rounded-l-2xl">
