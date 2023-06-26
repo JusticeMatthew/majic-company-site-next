@@ -25,7 +25,7 @@ const Header = ({ pos }) => {
           width={50}
           height={50}
         />
-        <h1 className="text-2xl font-semibold leading-7">
+        <h1 className="text-2xl leading-7 font-calistoga">
           Majic
           <br />
           Web Design

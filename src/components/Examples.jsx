@@ -27,7 +27,7 @@ const Examples = () => {
           </span>
           <p className="w-[40rem] mt-16">
             Majic created the website for our company B&C Pest Control. We told
-            them wanted something simple and informative and they delivered
+            them we wanted something simple and informative and they delivered
             better than we expected while keeping us updated along the way and
             listening to our feedback. Their team also assisted in designing a
             company logo, acquiring our domain name, and took care of hosting
@@ -35,7 +35,7 @@ const Examples = () => {
             recommend Majic for website design, especially for companies looking
             for someone with a creative eye.
           </p>
-          <p className="mt-6 mb-10 text-lg tracking-tight">
+          <p className="mt-6 mb-8 text-lg tracking-tight">
             Garry & JJ Reese
             <span className="block text-sm opacity-75">Owners</span>
           </p>

@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import Lottie from 'lottie-react';
 import benefits from '@/constants/benefits';
-import { MiniLogoSparkles, Button } from '@/components';
+import { MiniLogoSparkles, Button, ScrollLink } from '@/components';
+import working from '@/working.json';
 
 const About = () => {
   return (
@@ -11,8 +12,9 @@ const About = () => {
       className="relative flex items-center justify-center w-full h-screen text-text"
     >
       <div className="grid justify-center w-full grid-cols-3 gap-10">
-        <div className="col-span-3 bg-seasalt h-[30rem] rounded-2xl flex flex-col items-center justify-center shadow">
-          <div className="w-[22rem] flex flex-col self-end gap-5 mr-24">
+        <div className="col-span-3 bg-seasalt h-[30rem] rounded-2xl flex items-center justify-evenly shadow">
+          <Lottie animationData={working} className="w-[28rem] h-[28rem]" />
+          <div className="w-[22rem] flex flex-col gap-5">
             <p className="text-5xl font-calistoga">
               Running your own business is
               <br />
@@ -23,16 +25,18 @@ const About = () => {
               who need worry-free web design & development services at a fair
               rate.
             </p>
-            <Button>
-              <Image
+            <ScrollLink to="contact">
+              <Button className="w-[21rem]">
+                {/* <Image
                 src="/images/play-icon.svg"
                 alt="play"
                 width={20}
                 height={20}
                 className="inline -translate-y-[1px] mr-3"
-              />
-              How the Majic happens
-            </Button>
+              /> */}
+                Get a free quote
+              </Button>
+            </ScrollLink>
           </div>
         </div>
         {benefits.map((item, idx) => (
