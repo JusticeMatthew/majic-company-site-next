@@ -6,26 +6,26 @@ const Examples = () => {
   return (
     <section
       id="examples"
-      className="flex items-center justify-center h-screen max-w-full mx-6 text-text"
+      className="flex items-center justify-center h-[80rem] sm:h-screen max-w-full mx-6 text-text"
     >
-      <div className="w-full h-[40rem] bg-seasalt rounded-2xl relative flex">
-        <div className="h-[40rem] w-80 relative bg-[#18181B] rounded-l-2xl">
+      <div className="w-full h-[50rem] sm:h-[60rem] mg:h-[42rem] bg-seasalt rounded-2xl relative flex max-mg:flex-col">
+        <div className="mg:h-[42rem] h-[60rem] w-full relative bg-[#18181B] rounded-t-2xl mg:rounded-l-2xl">
           <Image
             src="/images/bcmockup.png"
             alt="b & c pest control website"
             fill
-            className="rounded-l-2xl"
+            className="object-cover object-top max-mg:rounded-t-2xl mg:rounded-l-2xl"
           />
         </div>
-        <div className="relative p-24">
+        <div className="relative p-8 sm:p-16 md:p-24">
           <p className="font-semibold tracking-tighter">B & C Pest Control</p>
-          <h4 className="mt-6 text-5xl font-calistoga">
+          <h4 className="mt-6 text-4xl md:text-5xl font-calistoga md:max-mg:whitespace-nowrap">
             A fresh look for a <span className="text-gradient">local pro</span>
           </h4>
           <span className="absolute translate-y-10 text-[8rem] leading-none font-calistoga text-gradient opacity-20">
             {'"'}
           </span>
-          <p className="w-[40rem] mt-16">
+          <p className="sm:w-[33rem] md:w-[40rem] mt-10 sm:mt-16 sm:text-base text-sm">
             Majic created the website for our company B&C Pest Control. We told
             them we wanted something simple and informative and they delivered
             better than we expected while keeping us updated along the way and
