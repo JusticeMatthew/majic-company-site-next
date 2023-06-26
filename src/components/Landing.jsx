@@ -12,7 +12,7 @@ const Landing = () => {
       initial={{ opacity: 0 }}
       transition={{ duration: 0.9 }}
       id="home"
-      className="relative flex flex-col items-center justify-center min-h-screen gap-10 px-6 pt-20 text-center text-text"
+      className="relative flex flex-col items-center justify-center h-screen gap-10 px-6 pt-20 text-center text-text max-sm:h-[50rem]"
     >
       <motion.h2 className="text-6xl max-sm:text-4xl md:text-7xl font-calistoga">
         We build beautiful websites
