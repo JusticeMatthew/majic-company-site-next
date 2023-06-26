@@ -14,7 +14,7 @@ const Landing = () => {
       id="home"
       className="relative flex flex-col items-center justify-center h-screen gap-10 px-6 pt-20 text-center text-text"
     >
-      <motion.h2 className="text-6xl md:text-7xl font-calistoga">
+      <motion.h2 className="text-6xl max-sm:text-4xl md:text-7xl font-calistoga">
         We build beautiful websites
         <br />
         for great businesses like&nbsp;

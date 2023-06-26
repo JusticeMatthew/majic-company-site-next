@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        mg: '73rem',
+        mg: '1168px',
       },
       colors: {
         seasalt: '#F8FAFC',
