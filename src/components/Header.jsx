@@ -15,9 +15,9 @@ const Header = ({ pos }) => {
         pos === 0
           ? `bg-none`
           : `${pos >= 2200 ? 'bg-seasalt shadow' : 'bg-seasalt/10 shadow'}`
-      } transition-colors fixed z-40 flex items-center justify-between px-4 h-20 mg:mt-4 mg:rounded-2xl text-text backdrop-blur duration-300 w-screen max-w-[72rem] mr-4`}
+      } transition-colors fixed z-40 flex items-center justify-between px-4 h-20 mg:mt-4 mg:rounded-2xl text-text backdrop-blur duration-300 w-full mg:w-[72rem] mg:mr-4`}
     >
-      <ScrollLink to="home" className="flex gap-2 cursor-pointer max-sm:mt-4">
+      <ScrollLink to="home" className="flex gap-2 cursor-pointer">
         <Image
           src="/images/logo-svg.svg"
           alt="company logo"

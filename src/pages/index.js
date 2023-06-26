@@ -62,10 +62,10 @@ export default function Home() {
 
   return (
     <div
-      className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text flex justify-center w-screen`}
+      className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text flex justify-center w-screen relative`}
     >
       <Header pos={pos} />
-      <ScrollerMotion>
+      <ScrollerMotion spring={{ mass: 1.5, stiffness: 500, damping: 50 }}>
         <main className="w-screen max-w-[75rem] mx-auto">
           <Landing />
           <About />
