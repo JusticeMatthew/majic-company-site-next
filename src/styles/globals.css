@@ -4,10 +4,6 @@
 @import-normalize;
 
 @layer components {
-  .center-column {
-    @apply px-4 w-[75rem];
-  }
-
   .text-gradient {
     @apply text-transparent bg-primary-gradient bg-clip-text;
   }
@@ -41,6 +37,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
   will-change: transform;
 }

@@ -12,21 +12,21 @@ const Landing = () => {
       initial={{ opacity: 0 }}
       transition={{ duration: 0.9 }}
       id="home"
-      className="relative flex flex-col items-center justify-center h-screen gap-10 pt-20 text-center text-text"
+      className="relative flex flex-col items-center justify-center h-screen gap-10 px-6 pt-20 text-center text-text"
     >
-      <motion.h2 className="text-7xl font-calistoga">
+      <motion.h2 className="text-6xl md:text-7xl font-calistoga">
         We build beautiful websites
         <br />
         for great businesses like&nbsp;
         <span className="text-gradient">yours</span>
       </motion.h2>
-      <p className="w-5/12 text-lg">
+      <p className="md:text-lg w-80 md:w-5/12">
         We help local business find new customers online and grow their business
         through stand-out websites & videos. Reach out today and get a free
         quote.
       </p>
       <ScrollLink to="contact">
-        <Button className="mt-10">Get a free quote</Button>
+        <Button className="mt-4 md:mt-10">Get a free quote</Button>
       </ScrollLink>
       <ScrollLink to="about">
         <div className="absolute flex items-center justify-center bottom-12">

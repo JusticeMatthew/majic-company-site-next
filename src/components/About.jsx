@@ -11,9 +11,12 @@ const About = () => {
       id="about"
       className="relative flex items-center justify-center w-full h-screen text-text"
     >
-      <div className="grid justify-center w-full grid-cols-3 gap-10">
+      <div className="grid justify-center w-full grid-cols-3 gap-10 mx-6">
         <div className="col-span-3 bg-seasalt h-[30rem] rounded-2xl flex items-center justify-evenly shadow">
-          <Lottie animationData={working} className="w-[28rem] h-[28rem]" />
+          <Lottie
+            animationData={working}
+            className="w-[28rem] h-[28rem] hidden md:inline"
+          />
           <div className="w-[22rem] flex flex-col gap-5">
             <p className="text-5xl font-calistoga">
               Running your own business is

@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { ScrollLink } from '@/components';
-import services from '@/constants/services';
 
 const Header = ({ pos }) => {
   const aboutPosition = pos > 700 && pos < 1800 ? true : false;
@@ -16,7 +15,7 @@ const Header = ({ pos }) => {
         pos === 0
           ? `bg-none`
           : `${pos >= 2200 ? 'bg-seasalt shadow' : 'bg-seasalt/10 shadow'}`
-      } transition-colors fixed z-40 flex items-center justify-between w-[73rem] px-4 h-20 mt-4 rounded-2xl text-text backdrop-blur duration-300`}
+      } transition-colors fixed z-40 flex items-center justify-between px-4 h-20 mg:mt-4 mg:rounded-2xl text-text backdrop-blur duration-300 w-full max-w-[72rem]`}
     >
       <ScrollLink to="home" className="flex gap-2 cursor-pointer">
         <Image
@@ -25,13 +24,13 @@ const Header = ({ pos }) => {
           width={50}
           height={50}
         />
-        <h1 className="text-2xl leading-7 font-calistoga">
+        <h1 className="text-lg leading-7 md:text-2xl font-calistoga">
           Majic
           <br />
           Web Design
         </h1>
       </ScrollLink>
-      <nav className="flex gap-2">
+      <nav className="hidden gap-2 md:flex">
         {[
           ['about', 'About Us', aboutPosition, 0],
           ['examples', 'Examples', examplePosition, 0],

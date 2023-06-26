@@ -62,11 +62,13 @@ export default function Home() {
 
   return (
     <div
-      className={`${inter.variable} ${calistoga.variable} font-inter center-column mx-auto selection:bg-purp selection:text-text text-text`}
+      className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text flex justify-center`}
     >
-      <Header pos={pos} />
+      <div className="w-screen max-w-[72rem]">
+        <Header pos={pos} />
+      </div>
       <SmoothScroll>
-        <main className="mx-auto center-column">
+        <main className="w-screen max-w-[75rem]">
           <Landing />
           <About />
           <ScrollingWords />
