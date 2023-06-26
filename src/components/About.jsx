@@ -36,10 +36,7 @@ const About = () => {
           </div>
         </div>
         {benefits.map((item, idx) => (
-          <motion.div
-            whileInView={{ x: 0, opacity: 1 }}
-            initial={{ x: -100, opacity: 0 }}
-            transition={{ duration: 0.5, delay: idx * 0.1 }}
+          <div
             key={idx}
             className="flex flex-col items-center justify-evenly p-14 bg-seasalt rounded-2xl h-[30rem] relative group shadow"
           >
@@ -52,7 +49,7 @@ const About = () => {
               {item.bottomText}
             </p>
             <p className="leading-5 text-center text-text">{item.content}</p>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

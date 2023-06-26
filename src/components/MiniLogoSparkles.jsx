@@ -13,7 +13,7 @@ const MiniLogoSparkles = ({ className }) => {
           transition: {
             ease: 'easeInOut',
             repeatType: 'reverse',
-            duration: 10,
+            duration: 0.9,
             repeat: Infinity,
           },
         }}
@@ -33,7 +33,7 @@ const MiniLogoSparkles = ({ className }) => {
             delay: 0.2,
             ease: 'easeInOut',
             repeatType: 'reverse',
-            duration: 10,
+            duration: 1,
             repeat: Infinity,
           },
         }}
@@ -53,7 +53,7 @@ const MiniLogoSparkles = ({ className }) => {
             delay: 0.5,
             ease: 'easeInOut',
             repeatType: 'reverse',
-            duration: 10,
+            duration: 1,
             repeat: Infinity,
           },
         }}

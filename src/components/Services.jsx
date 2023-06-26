@@ -17,7 +17,7 @@ const Services = () => {
       >
         <h4 className="text-5xl tracking-wide font-calistoga">What we offer</h4>
         <div className="flex justify-between w-full">
-          <p className="w-80 text-seasalt/60">
+          <p className="w-80 text-seasalt/70">
             You have a business to run. That’s why we go above and beyond to
             provide the most complete digital service to our clients. From your
             own domain and hosting, to webdesign and email support.

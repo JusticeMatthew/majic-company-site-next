@@ -33,7 +33,7 @@ const ContactForm = () => {
           process.env.NEXT_PUBLIC_EMAILJS_USER,
         ),
         {
-          loading: `I'm summoning your message...`,
+          loading: `We're summoning your message...`,
           success: (
             <span>
               The spell worked!
@@ -62,7 +62,7 @@ const ContactForm = () => {
     >
       <div>
         <label htmlFor="name" className="ml-5 text-lg font-semibold">
-          Name*
+          Name
         </label>
         <div
           className={`flex flex-col w-full p-1 rounded-full ${
@@ -90,7 +90,7 @@ const ContactForm = () => {
       </div>
       <div>
         <label htmlFor="email" className="ml-5 text-lg font-semibold">
-          Email*
+          Email
         </label>
         <div
           className={`flex flex-col w-full p-1 rounded-full ${

@@ -10,7 +10,7 @@ const Landing = () => {
     <motion.section
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.9 }}
       id="home"
       className="relative flex flex-col items-center justify-center h-screen gap-10 pt-20 text-center text-text"
     >
@@ -25,7 +25,9 @@ const Landing = () => {
         through stand-out websites & videos. Reach out today and get a free
         quote.
       </p>
-      <Button className="mt-10">Get a free quote</Button>
+      <ScrollLink to="contact">
+        <Button className="mt-10">Get a free quote</Button>
+      </ScrollLink>
       <ScrollLink to="about">
         <div className="absolute flex items-center justify-center bottom-12">
           <div className="absolute w-8 h-12 rounded-full bg-primary-gradient" />
