@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Inter, Calistoga } from 'next/font/google';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
 import { ScrollerMotion } from 'scroller-motion';
@@ -29,6 +29,11 @@ const calistoga = Calistoga({
 export default function Home() {
   const { scrollY } = useScroll();
   const [pos, setPos] = useState(0);
+  const [innerWidth, setInnerWidth] = useState('');
+
+  useEffect(() => {
+    setInnerWidth(window.innerWidth);
+  }, []);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setPos(latest);
@@ -65,7 +70,11 @@ export default function Home() {
       className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text flex justify-center w-screen relative`}
     >
       <Header pos={pos} />
-      <ScrollerMotion spring={{ mass: 1.5, stiffness: 500, damping: 50 }}>
+      <ScrollerMotion
+        spring={
+          innerWidth > 640 ? { mass: 1.5, stiffness: 500, damping: 50 } : null
+        }
+      >
         <main className="w-screen max-w-[75rem] mx-auto">
           <Landing />
           <About />
