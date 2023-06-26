@@ -14,7 +14,7 @@ const Examples = () => {
             src="/images/bcmockup.png"
             alt="b & c pest control website"
             fill
-            className="object-cover object-top max-mg:rounded-t-2xl mg:rounded-l-2xl"
+            className="object-cover object-top mg:object-fill max-mg:rounded-t-2xl mg:rounded-l-2xl"
           />
         </div>
         <div className="relative p-8 sm:p-16 md:p-24">
