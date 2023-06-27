@@ -58,9 +58,9 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(sendEmail)}
-      className="w-[30rem] h-80 flex flex-col gap-2 text-text"
+      className="w-[18.5rem] sm:w-[26rem] mg:w-[30rem] h-80 flex flex-col gap-2 text-text"
     >
-      <div>
+      <div className="h-28">
         <label htmlFor="name" className="ml-5 text-lg font-semibold">
           Name
         </label>
@@ -88,7 +88,7 @@ const ContactForm = () => {
           We need your name or your companies name
         </p>
       </div>
-      <div>
+      <div className="h-28">
         <label htmlFor="email" className="ml-5 text-lg font-semibold">
           Email
         </label>
@@ -119,7 +119,7 @@ const ContactForm = () => {
       <Button
         type="submit"
         disabled={errors.name || errors.email ? true : false}
-        className="mt-8 translate-x-2 w-[29.2rem] disabled:opacity-50 disabled:pointer-events-none"
+        className="mt-8 translate-x-2 w-[17.8rem] sm:w-[25.3rem] mg:w-[29.3rem] disabled:opacity-50 disabled:pointer-events-none"
       >
         Request a quote
       </Button>

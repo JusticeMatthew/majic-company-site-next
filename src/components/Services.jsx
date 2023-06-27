@@ -7,7 +7,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="mx-6 flex items-center max-w-full px-4 h-[50vh] text-seasalt"
+      className="mx-6 flex items-center max-w-full px-4 h-screen sm:h-[50vh] text-seasalt"
     >
       <motion.div
         whileInView={{ opacity: 1 }}
@@ -16,7 +16,7 @@ const Services = () => {
         className="flex flex-col w-full gap-6"
       >
         <h4 className="text-5xl tracking-wide font-calistoga">What we offer</h4>
-        <div className="flex justify-between w-full">
+        <div className="flex flex-col justify-between w-auto mg:w-full mg:flex-row max-mg:gap-10">
           <p className="w-80 text-seasalt/70">
             You have a business to run. That’s why we go above and beyond to
             provide the most complete digital service to our clients. From your
@@ -25,7 +25,7 @@ const Services = () => {
             <br />
             <span className="font-bold">We take care of it.</span>
           </p>
-          <motion.div className="grid grid-cols-2 grid-rows-5 gap-4">
+          <motion.div className="grid grid-cols-1 grid-rows-5 gap-4 sm:grid-cols-2 md:max-mg:translate-x-20">
             {services.map((item, idx) => (
               <motion.div
                 whileInView={{ opacity: 1 }}
@@ -33,8 +33,10 @@ const Services = () => {
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
                 key={idx}
                 className={`${
-                  item.offset ? '-translate-x-20' : ''
-                } flex items-center gap-5 px-6 py-4 rounded-full bg-primary-gradient`}
+                  item.offset ? 'md:-translate-x-20' : ''
+                } flex items-center gap-5 px-6 py-4 rounded-full bg-primary-gradient sm:max-md:text-sm ${
+                  idx > 6 ? 'invisible sm:visible' : ''
+                }`}
               >
                 <Image
                   src="/images/circle-check-icon.svg"
