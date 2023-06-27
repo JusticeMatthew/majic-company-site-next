@@ -7,8 +7,11 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="mx-6 flex items-center max-w-full px-4 h-screen sm:h-[50vh] text-seasalt"
+      className="mx-6 flex items-center max-w-full px-4 h-screen sm:h-[50vh] text-seasalt relative"
     >
+      <div className="invisible mg:visible absolute w-[125rem] h-[100rem] opacity-[.03] -translate-x-[29rem]">
+        <Image src="/images/scroll.svg" alt="unrolled scroll" fill />
+      </div>
       <motion.div
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}

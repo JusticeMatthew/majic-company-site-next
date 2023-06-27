@@ -2,7 +2,7 @@ const services = [
   { service: 'Custom website design', offset: true },
   { service: 'Search engine optimization', offset: true },
   { service: 'Video editing & integration' },
-  { service: 'X design revisions' },
+  { service: '10 design revisions' },
   { service: '24/7 Customer support', offset: true },
   { service: 'Mobile-friendly designs', offset: true },
   { service: 'Social media integration' },
