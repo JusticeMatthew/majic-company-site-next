@@ -9,16 +9,6 @@ const Examples = () => {
       id="examples"
       className="flex flex-col items-center justify-center h-[80rem] sm:h-screen max-w-full mx-6 text-text"
     >
-      <motion.h3
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{
-          duration: 2,
-        }}
-        className="self-start mb-8 text-4xl font-calistoga text-text"
-      >
-        Transformations
-      </motion.h3>
       <div className="w-full h-[50rem] sm:h-[60rem] mg:h-[42rem] bg-seasalt rounded-2xl relative flex max-mg:flex-col">
         <div className="mg:h-[42rem] h-[60rem] w-full relative bg-[#18181B] rounded-t-2xl mg:rounded-l-2xl">
           <Image
