@@ -37,7 +37,6 @@ export default function Home() {
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setPos(latest);
-    console.log(latest);
     const body = document.body;
 
     if (latest < 2200) {
