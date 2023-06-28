@@ -48,7 +48,7 @@ const About = () => {
           >
             <MiniLogoSparkles className="invisible -top-5 -left-4 group-hover:visible" />
             <MiniLogoSparkles className="invisible -bottom-5 -right-5 group-hover:visible" />
-            <div className="relative h-24 w-60 max-mg:h-18 max-mg:w-20 max-md:mr-6">
+            <div className="relative h-24 w-60 max-mg:h-18 max-mg:w-20 max-md:mr-6 max-sm:hidden">
               <Image src={item.icon} alt={item.alt} fill />
             </div>
             <div>

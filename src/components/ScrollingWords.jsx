@@ -4,11 +4,11 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 const ScrollingWords = () => {
   const { scrollYProgress } = useScroll();
-  const x = useTransform(scrollYProgress, [0, 1], [-200, -1300]);
+  const x = useTransform(scrollYProgress, [0, 1], [-600, -1800]);
   const spring = useSpring(x);
 
   return (
-    <div className="flex flex-row h-20 pointer-events-none sm:max-mg:h-40">
+    <div className="flex-row hidden h-20 pointer-events-none sm:flex sm:max-mg:h-40">
       <div className="flex flex-row h-40 pointer-events-none">
         <motion.p
           style={{ x: spring }}
