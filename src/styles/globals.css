@@ -10,12 +10,12 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 body {
   overflow-x: hidden;
-  overscroll-behavior-y: none;
+  overscroll-behavior: none;
   background-image: linear-gradient(
     to right,
     rgba(248, 250, 252, 0.6),

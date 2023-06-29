@@ -71,7 +71,7 @@ export default function Home() {
       <Header pos={pos} />
       <ScrollerMotion
         spring={
-          innerWidth > 640 ? { mass: 1.5, stiffness: 500, damping: 50 } : null
+          innerWidth > 640 ? { mass: 1, stiffness: 500, damping: 50 } : null
         }
       >
         <main className="w-screen max-w-[75rem] mx-auto">

@@ -29,7 +29,7 @@ const Landing = () => {
         <Button className="mt-4 md:mt-10">Get a free quote</Button>
       </ScrollLink>
       <ScrollLink to="about">
-        <div className="absolute flex items-center justify-center bottom-6 sm:bottom-12">
+        <div className="absolute flex items-center justify-center h-40 bottom-6 sm:bottom-12">
           <div className="absolute w-8 h-12 rounded-full bg-primary-gradient" />
           <Lottie animationData={scrollDown} className="absolute w-12 h-12" />
         </div>
