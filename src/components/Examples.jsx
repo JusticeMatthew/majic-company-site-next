@@ -12,7 +12,7 @@ const Examples = () => {
       <div className="w-full h-[50rem] sm:h-[60rem] mg:h-[42rem] bg-seasalt rounded-2xl relative flex max-mg:flex-col">
         <div className="mg:h-[42rem] h-[60rem] w-full relative bg-[#18181B] rounded-t-2xl mg:rounded-l-2xl">
           <Image
-            src="/images/bcmockup.png"
+            src="/images/bcmockup.webp"
             alt="b & c pest control website"
             fill
             className="object-cover object-top mg:object-fill max-mg:rounded-t-2xl mg:rounded-l-2xl"
