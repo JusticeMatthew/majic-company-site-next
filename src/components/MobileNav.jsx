@@ -38,31 +38,29 @@ const MobileNav = ({ navItems }) => {
               leaveTo="transform opacity-0 scale-95"
             >
               <Menu.Items className="absolute right-0 p-4 shadow bg-seasalt rounded-2xl">
-                {({ close }) =>
-                  navItems.map((item, idx) => (
-                    <div key={idx} className="px-3 py-1">
-                      <Menu.Item onClick={close}>
-                        {({ active }) => (
-                          <div
-                            className={`${
-                              active
-                                ? 'text-xl font-semibold rounded-2xl bg-primary-gradient py-2 px-3'
-                                : 'text-xl font-semibold rounded-2xl py-2 px-3'
-                            }`}
-                          >
-                            <ScrollLink
-                              to={item[0]}
-                              offset={item[3]}
-                              className="text-xl font-semibold rounded-2xl"
-                            >
-                              <p>{item[1]}</p>
-                            </ScrollLink>
-                          </div>
-                        )}
-                      </Menu.Item>
-                    </div>
-                  ))
-                }
+                {navItems.map((item, idx) => (
+                  <Menu.Item key={idx}>
+                    {({ active, close }) => (
+                      <div
+                        onClick={close}
+                        className={`${
+                          active
+                            ? 'text-xl font-semibold rounded-2xl bg-primary-gradient py-2 px-3'
+                            : 'text-xl font-semibold rounded-2xl py-2 px-3'
+                        }`}
+                      >
+                        <ScrollLink
+                          to={item[0]}
+                          onClick={close}
+                          offset={item[3]}
+                          className="text-xl font-semibold rounded-2xl"
+                        >
+                          <p>{item[1]}</p>
+                        </ScrollLink>
+                      </div>
+                    )}
+                  </Menu.Item>
+                ))}
               </Menu.Items>
             </Transition>
           </>
