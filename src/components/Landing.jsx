@@ -12,7 +12,7 @@ const Landing = () => {
       initial={{ opacity: 0 }}
       transition={{ duration: 0.9 }}
       id="home"
-      className="relative flex flex-col items-center justify-center h-screen gap-10 px-6 pt-20 text-center text-text max-sm:h-[45rem]"
+      className="relative flex flex-col items-center justify-center h-screen gap-10 px-6 pt-20 text-center text-text max-sm:h-[45rem] mb-40"
     >
       <motion.h2 className="text-6xl max-sm:text-4xl md:text-7xl font-calistoga">
         We build beautiful websites
@@ -29,7 +29,7 @@ const Landing = () => {
         <Button className="mt-4 md:mt-10">Get a free quote</Button>
       </ScrollLink>
       <ScrollLink to="about">
-        <div className="absolute flex items-center justify-center h-40 bottom-6 sm:bottom-12">
+        <div className="absolute flex items-center justify-center bottom-6 sm:bottom-12">
           <div className="absolute w-8 h-12 rounded-full bg-primary-gradient" />
           <Lottie animationData={scrollDown} className="absolute w-12 h-12" />
         </div>

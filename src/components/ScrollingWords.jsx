@@ -8,7 +8,7 @@ const ScrollingWords = () => {
   const spring = useSpring(x);
 
   return (
-    <div className="flex flex-row h-1 pointer-events-none sm:h-20 sm:max-mg:h-40">
+    <div className="flex flex-row h-1 pointer-events-none sm:h-40">
       <div className="flex flex-row h-40 pointer-events-none">
         <motion.p
           style={{ x: spring }}

@@ -7,7 +7,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="mx-6 flex items-center max-w-full px-4 h-screen sm:h-[50vh] text-seasalt relative"
+      className="mx-6 flex items-center max-w-full px-4 h-screen sm:h-[50vh] text-seasalt relative max-sm:mb-16 max-sm:-mt-16"
     >
       <div className="invisible mg:visible absolute w-[125rem] h-[100rem] opacity-[.03] -translate-x-[29rem]">
         <Image src="/images/scroll.svg" alt="unrolled scroll" fill />
@@ -37,8 +37,8 @@ const Services = () => {
                 key={idx}
                 className={`${
                   item.offset ? 'md:-translate-x-20' : ''
-                } flex items-center gap-5 px-6 py-4 rounded-full bg-primary-gradient sm:max-md:text-sm ${
-                  idx > 6 ? 'invisible sm:visible' : ''
+                } items-center gap-5 flex px-6 py-4 rounded-full bg-primary-gradient sm:max-md:text-sm ${
+                  idx > 6 ? 'hidden sm:flex' : ''
                 }`}
               >
                 <Image
