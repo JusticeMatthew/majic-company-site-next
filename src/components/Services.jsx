@@ -7,16 +7,16 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="mx-6 flex items-center max-w-full px-4 h-[50rem] sm:h-[50vh] text-seasalt relative max-sm:mb-16 max-sm:-mt-16"
+      className="mx-6 flex sm:items-center max-w-full px-4 h-[51rem] sm:h-[50vh] text-seasalt relative max-sm:mb-16  max-sm:text-sm"
     >
-      <div className="invisible mg:visible absolute w-[125rem] h-[100rem] opacity-[.03] -translate-x-[29rem]">
+      <div className="invisible lg:visible absolute w-[125rem] h-[100rem] opacity-[.03] -translate-x-[29rem]">
         <Image src="/images/scroll.svg" alt="unrolled scroll" fill />
       </div>
       <motion.div
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col w-full gap-6"
+        className="flex flex-col gap-6 sm:w-full w-80"
       >
         <h4 className="text-5xl tracking-wide font-calistoga">What we offer</h4>
         <div className="flex flex-col justify-between w-auto mg:w-full mg:flex-row max-mg:gap-10">
