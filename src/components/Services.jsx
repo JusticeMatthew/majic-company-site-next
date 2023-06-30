@@ -7,7 +7,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="mx-6 flex items-center max-w-full px-4 h-screen sm:h-[50vh] text-seasalt relative max-sm:mb-16 max-sm:-mt-16"
+      className="mx-6 flex items-center max-w-full px-4 h-[50rem] sm:h-[50vh] text-seasalt relative max-sm:mb-16 max-sm:-mt-16"
     >
       <div className="invisible mg:visible absolute w-[125rem] h-[100rem] opacity-[.03] -translate-x-[29rem]">
         <Image src="/images/scroll.svg" alt="unrolled scroll" fill />
