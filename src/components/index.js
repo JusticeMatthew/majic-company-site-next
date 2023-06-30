@@ -9,3 +9,4 @@ export { default as Examples } from './Examples';
 export { default as Services } from './Services';
 export { default as Contact } from './Contact';
 export { default as Footer } from './Footer';
+export { default as MobileNav } from './MobileNav';

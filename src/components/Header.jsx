@@ -1,12 +1,19 @@
 import React from 'react';
 import Image from 'next/image';
-import { ScrollLink } from '@/components';
+import { ScrollLink, MobileNav } from '@/components';
 
 const Header = ({ pos }) => {
   const aboutPosition = pos > 700 && pos < 1800 ? true : false;
   const examplePosition = pos > 2150 && pos < 3200 ? true : false;
   const servicesPosition = pos > 3300 && pos < 4000 ? true : false;
   const contactPosition = pos > 4100 && pos < 10000 ? true : false;
+
+  const navItems = [
+    ['about', 'About Us', aboutPosition, 0],
+    ['examples', 'Examples', examplePosition, 0],
+    ['services', 'Services', servicesPosition, -300],
+    ['contact', 'Contact', contactPosition, 0],
+  ];
 
   return (
     <header
@@ -24,19 +31,15 @@ const Header = ({ pos }) => {
           width={50}
           height={50}
         />
-        <h1 className="text-lg leading-7 md:text-2xl font-calistoga">
+        <h1 className="text-lg md:text-2xl font-calistoga">
           Majic
           <br />
           Web Design
         </h1>
       </ScrollLink>
+      <MobileNav navItems={navItems} />
       <nav className="hidden gap-2 md:flex">
-        {[
-          ['about', 'About Us', aboutPosition, 0],
-          ['examples', 'Examples', examplePosition, 0],
-          ['services', 'Services', servicesPosition, -300],
-          ['contact', 'Contact', contactPosition, 0],
-        ].map((item, idx) => (
+        {navItems.map((item, idx) => (
           <ScrollLink
             key={idx}
             to={item[0]}
