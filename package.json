@@ -29,10 +29,5 @@
     "scroller-motion": "^1.2.3",
     "tailwindcss": "3.3.2",
     "zod": "^3.21.4"
-  },
-  "devDependencies": {
-    "sst": "^2.18.1",
-    "aws-cdk-lib": "2.84.0",
-    "constructs": "10.1.156"
   }
 }
