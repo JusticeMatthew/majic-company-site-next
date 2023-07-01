@@ -1,6 +1,0 @@
-2023-07-01T20:33:58.446Z  +1070ms [debug] Config loaded {"version":"2.18.1","cdkVersion":"2.84.0","constructsVersion":"10.1.156","config":{"name":"majic-company-site-next","region":"us-east-1","stage":"Matthew","ssmPrefix":"/sst/majic-company-site-next/Matthew/"},"metafile":{"inputs":{"sst.config.ts":{"bytes":227,"imports":[{"path":"sst","kind":"import-statement","external":true},{"path":"sst/constructs","kind":"import-statement","external":true}]}},"outputs":{".sst.config.1688243638332.mjs":{"imports":[],"exports":["default"],"entryPoint":"sst.config.ts","inputs":{"sst.config.ts":{"bytesInOutput":138}},"bytes":320}}},"paths":{"config":"/Users/Matthew/Documents/Coding/majic-company-site-next/sst.config.ts","root":"/Users/Matthew/Documents/Coding/majic-company-site-next","out":"/Users/Matthew/Documents/Coding/majic-company-site-next/.sst","artifacts":"/Users/Matthew/Documents/Coding/majic-company-site-next/.sst/artifacts"}}
-2023-07-01T20:34:01.897Z  +3451ms [debug] Using AWS profile 
-2023-07-01T20:34:02.053Z   +156ms [debug] Created AWS client STSClient
-2023-07-01T20:34:02.054Z     +1ms [debug] Fetching app metadata
-2023-07-01T20:34:02.055Z     +1ms [debug] Initializing bootstrap context
-2023-07-01T20:34:02.055Z     +0ms [debug] Created AWS client CloudFormationClient
