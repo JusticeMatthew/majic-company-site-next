@@ -7,7 +7,7 @@ const ToastProvider = ({ children }) => {
         position="b-center"
         reverseOrder={false}
         containerStyle={{
-          bottom: 400,
+          bottom: 600,
         }}
         toastOptions={{
           success: {
