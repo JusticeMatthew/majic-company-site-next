@@ -27,13 +27,9 @@ const calistoga = Calistoga({
   variable: '--font-calistoga',
 });
 
-const DynamicScroller = dynamic(
-  () =>
-    import('../components/DynamicScroller').then((mod) => mod.DynamicScroller),
-  {
-    loading: () => <></>,
-  },
-);
+const Scroller = dynamic(() => import('../components/DynamicScroller'), {
+  loading: () => <></>,
+});
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -78,7 +74,7 @@ export default function Home() {
       className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text flex justify-center w-screen relative`}
     >
       <Header pos={pos} />
-      <DynamicScroller innerWidth={innerWidth}>
+      <Scroller innerWidth={innerWidth}>
         <main className="w-screen max-w-[75rem] mx-auto">
           <Landing />
           <About />
@@ -90,7 +86,7 @@ export default function Home() {
           </ToastProvider>
           <Footer />
         </main>
-      </DynamicScroller>
+      </Scroller>
     </div>
   );
 }
