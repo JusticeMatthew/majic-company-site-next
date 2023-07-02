@@ -28,7 +28,7 @@ const calistoga = Calistoga({
 });
 
 const DynamicExamples = dynamic(() => import('../components/Examples'), {
-  loading: () => <></>,
+  loading: () => <p className="text-4xl font-calistoga">Loading...</p>,
 });
 
 export default function Home() {
