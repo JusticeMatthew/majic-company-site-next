@@ -21,9 +21,9 @@ const Landing = () => {
         <span className="text-gradient">yours</span>
       </motion.h2>
       <p className="md:text-lg w-80 md:w-5/12">
-        We help local business find new customers online and grow their business
-        through stand-out websites & videos. Reach out today and get a free
-        quote.
+        We help local businesses find new customers online and grow their
+        business through stand-out websites & videos. Reach out today and get a
+        free quote.
       </p>
       <ScrollLink to="contact">
         <Button className="mt-4 md:mt-10">Get a free quote</Button>
