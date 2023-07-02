@@ -29,6 +29,7 @@ const Landing = () => {
         <Button>Get a free quote</Button>
       </ScrollLink>
       <ScrollLink
+        alt="scroll down indicator"
         to="about"
         className="absolute flex items-center justify-center bottom-6 sm:bottom-12"
       >
