@@ -7,19 +7,16 @@ import { Button, ScrollLink } from '@/components';
 
 const Landing = () => {
   return (
-    <motion.section
-      animate={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      transition={{ duration: 0.9 }}
+    <section
       id="home"
       className="relative flex flex-col items-center justify-center h-screen gap-10 px-6 pt-20 text-center text-text max-sm:h-[45rem] mb-40"
     >
-      <motion.h2 className="text-6xl max-sm:text-4xl md:text-7xl font-calistoga">
+      <h2 className="text-6xl max-sm:text-4xl md:text-7xl font-calistoga">
         We build beautiful websites
         <br />
         for great businesses like&nbsp;
         <span className="text-gradient">yours</span>
-      </motion.h2>
+      </h2>
       <p className="md:text-lg w-80 md:w-5/12">
         We help local businesses find new customers online and grow their
         business through stand-out websites & videos. Reach out today and get a
@@ -65,7 +62,7 @@ const Landing = () => {
       >
         <Image src="/images/logo-svg.svg" alt="company logo" fill />
       </motion.div>
-    </motion.section>
+    </section>
   );
 };
 
