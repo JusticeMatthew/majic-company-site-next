@@ -27,9 +27,13 @@ const calistoga = Calistoga({
   variable: '--font-calistoga',
 });
 
-const DynamicScroller = dynamic(() => import('../components/DynamicScroller'), {
-  loading: () => <></>,
-});
+const DynamicScroller = dynamic(
+  () =>
+    import('../components/DynamicScroller').then((mod) => mod.DynamicScroller),
+  {
+    loading: () => <></>,
+  },
+);
 
 export default function Home() {
   const { scrollY } = useScroll();
