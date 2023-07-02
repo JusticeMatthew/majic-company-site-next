@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { Inter, Calistoga } from 'next/font/google';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
 import { ScrollerMotion } from 'scroller-motion';
@@ -25,6 +26,13 @@ const calistoga = Calistoga({
   display: 'swap',
   variable: '--font-calistoga',
 });
+
+const DynamicScroller = dynamic(
+  () => import('scroller-motion').then((module) => module.ScrollerMotion),
+  {
+    ssr: false,
+  },
+);
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -69,7 +77,7 @@ export default function Home() {
       className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text flex justify-center w-screen relative`}
     >
       <Header pos={pos} />
-      <ScrollerMotion
+      <DynamicScroller
         disabled={innerWidth > 640 ? false : true}
         spring={{ mass: 1, stiffness: 500, damping: 50 }}
       >
@@ -84,7 +92,7 @@ export default function Home() {
           </ToastProvider>
           <Footer />
         </main>
-      </ScrollerMotion>
+      </DynamicScroller>
     </div>
   );
 }
