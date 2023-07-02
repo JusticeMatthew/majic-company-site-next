@@ -26,9 +26,3 @@ export default function App({ Component, pageProps }) {
     </>
   );
 }
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  };
-}
