@@ -25,14 +25,15 @@ const Landing = () => {
         business through stand-out websites & videos. Reach out today and get a
         free quote.
       </p>
-      <ScrollLink to="contact">
-        <Button className="mt-4 md:mt-10">Get a free quote</Button>
+      <ScrollLink to="contact" className="mt-4 md:mt-10">
+        <Button>Get a free quote</Button>
       </ScrollLink>
-      <ScrollLink to="about">
-        <div className="absolute flex items-center justify-center bottom-6 sm:bottom-12">
-          <div className="absolute w-8 h-12 rounded-full bg-primary-gradient" />
-          <Lottie animationData={scrollDown} className="absolute w-12 h-12" />
-        </div>
+      <ScrollLink
+        to="about"
+        className="absolute flex items-center justify-center bottom-6 sm:bottom-12"
+      >
+        <div className="absolute w-8 h-12 rounded-full bg-primary-gradient" />
+        <Lottie animationData={scrollDown} className="absolute w-12 h-12" />
       </ScrollLink>
       {/*BG items*/}
       <motion.div
