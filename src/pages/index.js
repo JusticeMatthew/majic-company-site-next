@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import { Inter, Calistoga } from 'next/font/google';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
 import { ScrollerMotion } from 'scroller-motion';
@@ -25,10 +24,6 @@ const calistoga = Calistoga({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-calistoga',
-});
-
-const DynamicExamples = dynamic(() => import('../components/Examples'), {
-  loading: () => <p className="text-4xl font-calistoga">Loading...</p>,
 });
 
 export default function Home() {
@@ -82,7 +77,7 @@ export default function Home() {
           <Landing />
           <About />
           <ScrollingWords />
-          <DynamicExamples />
+          <Examples />
           <Services />
           <ToastProvider>
             <Contact />
