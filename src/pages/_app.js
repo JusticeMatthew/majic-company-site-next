@@ -5,7 +5,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Majic Test</title>
+        <title>Majic Web Design</title>
         <link rel="icon" href="/images/favicon.ico" />
         <meta
           name="description"
