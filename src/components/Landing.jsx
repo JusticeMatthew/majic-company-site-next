@@ -15,7 +15,7 @@ const Landing = () => {
         We build beautiful website for great businesses like&nbsp;
         <span className="text-gradient">yours</span>
       </h2>
-      <p className="mb-16 md:text-lg w-80 md:w-5/12">
+      <p className="mb-16 md:text-lg max-w-[65ch]">
         We help local businesses find new customers online and grow their
         business through stand-out websites & videos. Reach out today and get a
         free quote.
