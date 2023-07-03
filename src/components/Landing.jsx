@@ -9,7 +9,7 @@ const Landing = () => {
   return (
     <section
       id="home"
-      className="relative flex flex-col items-center justify-center h-screen text-center text-text max-sm:h-[45rem]"
+      className="relative flex flex-col items-center justify-center min-h-screen text-center text-text max-sm:h-[45rem]"
     >
       <h2 className="mb-8 text-4xl sm:text-6xl md:text-7xl font-calistoga">
         We build beautiful website for great businesses like&nbsp;

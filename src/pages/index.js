@@ -70,7 +70,7 @@ export default function Home() {
       }}
     >
       <div
-        className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text main-container mx-auto p-6`}
+        className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text main-container mx-auto px-6 h-full`}
       >
         <Header pos={pos} />
         <Landing />

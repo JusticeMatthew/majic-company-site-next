@@ -22,7 +22,7 @@ const Header = ({ pos }) => {
         pos === 0
           ? `bg-none`
           : `${pos >= 2200 ? 'bg-seasalt shadow' : 'bg-seasalt/10 shadow'}`
-      } transition-colors sticky z-50 flex items-center justify-between px-6 h-20 top-0 mg:top-4 mg:rounded-2xl text-text backdrop-blur duration-300 w-screen mg:w-full`}
+      } transition-colors sticky z-50 flex items-center justify-between px-4 h-20 top-0 mg:top-4 mg:rounded-2xl text-text backdrop-blur duration-300 w-screen mg:w-full`}
     >
       <ScrollLink to="home" className="flex gap-2 cursor-pointer">
         <Image
