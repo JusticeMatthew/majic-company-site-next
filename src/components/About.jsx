@@ -9,9 +9,9 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative flex items-center justify-center w-full h-screen text-text max-sm:h-[70rem] sm:mb-20"
+      className="relative flex items-center justify-center w-full min-h-screen text-text max-sm:h-[70rem] sm:mb-20"
     >
-      <div className="grid justify-center w-full grid-cols-3 gap-10 mx-6 max-md:gap-4">
+      <div className="grid justify-center w-full grid-cols-3 gap-10 max-md:gap-4">
         <div className="col-span-3 bg-seasalt h-[30rem] rounded-2xl flex items-center justify-evenly shadow">
           <Lottie
             animationData={working}
@@ -29,13 +29,6 @@ const About = () => {
             </p>
             <ScrollLink to="contact">
               <Button className="md:max-mg:w-[17rem] w-[21rem] max-sm:w-60">
-                {/* <Image
-                src="/images/play-icon.svg"
-                alt="play"
-                width={20}
-                height={20}
-                className="inline -translate-y-[1px] mr-3"
-              /> */}
                 Get a free quote
               </Button>
             </ScrollLink>

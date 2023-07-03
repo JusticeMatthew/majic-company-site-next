@@ -10,12 +10,11 @@
 }
 
 html {
-  scroll-behavior: smooth !important;
+  overflow-x: hidden;
 }
 
 body {
   overflow-x: hidden;
-  overscroll-behavior: none;
   background-image: linear-gradient(
     to right,
     rgba(248, 250, 252, 0.6),
@@ -30,4 +29,28 @@ body {
     text-decoration-color, fill, stroke !important;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
   transition-duration: 300ms !important;
+}
+
+.main-container {
+  width: min(75rem, 100%);
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

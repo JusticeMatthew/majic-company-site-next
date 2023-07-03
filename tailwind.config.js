@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       screens: {
         sg: '945px',
-        mg: '1168px',
+        mg: '1200px',
       },
       colors: {
         seasalt: '#F8FAFC',
