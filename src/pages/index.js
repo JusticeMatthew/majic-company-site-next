@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import { Inter, Calistoga } from 'next/font/google';
+import { Lenis as ReactLenis } from '@studio-freight/react-lenis';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
-import { ScrollerMotion } from 'scroller-motion';
 import ToastProvider from '@/providers/ToastProvider';
 import {
   Header,
@@ -27,21 +26,10 @@ const calistoga = Calistoga({
   variable: '--font-calistoga',
 });
 
-const DynamicScroller = dynamic(
-  () => import('scroller-motion').then((module) => module.ScrollerMotion),
-  {
-    ssr: false,
-  },
-);
-
 export default function Home() {
   const { scrollY } = useScroll();
   const [pos, setPos] = useState(0);
   const [innerWidth, setInnerWidth] = useState('');
-
-  useEffect(() => {
-    setInnerWidth(window.innerWidth);
-  }, []);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setPos(latest);
@@ -71,30 +59,31 @@ export default function Home() {
       )`;
     }
   });
-  //fml
+
   return (
-    <div
-      className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text flex justify-center w-screen relative`}
+    <ReactLenis
+      root
+      options={{
+        smoothWheel: true,
+        smoothTouch: false,
+        syncTouch: true,
+      }}
     >
-      <Header pos={pos} />
-      <DynamicScroller
-        spring={
-          innerWidth > 640 ? { mass: 1, stiffness: 500, damping: 50 } : null
-        }
+      <div
+        className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text main-container mx-auto p-6`}
       >
-        <main className="w-screen max-w-[75rem] mx-auto">
-          <Landing />
-          <About />
-          <ScrollingWords />
-          <Examples />
-          <Services />
-          <ToastProvider>
-            <Contact />
-          </ToastProvider>
-          <Footer />
-        </main>
-      </DynamicScroller>
-    </div>
+        <Header pos={pos} />
+        <Landing />
+        <About />
+        <ScrollingWords />
+        <Examples />
+        <Services />
+        <ToastProvider>
+          <Contact />
+        </ToastProvider>
+        <Footer />
+      </div>
+    </ReactLenis>
   );
 }
 

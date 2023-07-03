@@ -9,29 +9,26 @@ const Landing = () => {
   return (
     <section
       id="home"
-      className="relative flex flex-col items-center justify-center h-screen gap-10 px-6 pt-20 text-center text-text max-sm:h-[45rem] mb-40"
+      className="relative flex flex-col items-center justify-center h-screen text-center text-text max-sm:h-[45rem]"
     >
-      <h2 className="text-6xl max-sm:text-4xl md:text-7xl font-calistoga">
-        We build beautiful websites
-        <br />
-        for great businesses like&nbsp;
+      <h2 className="mb-8 text-4xl sm:text-6xl md:text-7xl font-calistoga">
+        We build beautiful website for great businesses like&nbsp;
         <span className="text-gradient">yours</span>
       </h2>
-      <p className="md:text-lg w-80 md:w-5/12">
+      <p className="mb-16 md:text-lg w-80 md:w-5/12">
         We help local businesses find new customers online and grow their
         business through stand-out websites & videos. Reach out today and get a
         free quote.
       </p>
-      <ScrollLink to="contact" className="mt-4 md:mt-10">
+      <ScrollLink to="contact" className="mb-32">
         <Button>Get a free quote</Button>
       </ScrollLink>
       <ScrollLink
         alt="scroll down indicator"
         to="about"
-        className="absolute flex items-center justify-center bottom-6 sm:bottom-12"
+        className="flex items-center justify-center w-8 h-10 rounded-full bg-primary-gradient"
       >
-        <div className="absolute w-8 h-12 rounded-full bg-primary-gradient" />
-        <Lottie animationData={scrollDown} className="absolute w-12 h-12" />
+        <Lottie animationData={scrollDown} className="w-8 h-12" />
       </ScrollLink>
       {/*BG items*/}
       <motion.div
