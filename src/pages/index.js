@@ -71,7 +71,7 @@ export default function Home() {
       )`;
     }
   });
-
+  //fml
   return (
     <div
       className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text flex justify-center w-screen relative`}
