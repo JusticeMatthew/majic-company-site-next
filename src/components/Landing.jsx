@@ -11,14 +11,14 @@ const Landing = () => {
       id="home"
       className="relative flex flex-col items-center justify-center min-h-screen text-center text-text max-sm:h-[45rem]"
     >
-      <h2 className="mb-8 text-4xl sm:text-6xl md:text-7xl font-calistoga">
+      <h2 className="mt-32 mb-8 text-4xl sm:text-6xl md:text-7xl font-calistoga">
         We build beautiful website for great businesses like&nbsp;
         <span className="text-gradient">yours</span>
       </h2>
       <p className="mb-16 md:text-lg max-w-[65ch]">
         We help local businesses find new customers online and grow their
-        business through stand-out websites & videos. Reach out today and get a
-        free quote.
+        digital presence through stand-out websites & videos. Reach out today
+        and get a free quote.
       </p>
       <ScrollLink to="contact" className="mb-32">
         <Button>Get a free quote</Button>

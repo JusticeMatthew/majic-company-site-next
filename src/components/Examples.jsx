@@ -6,7 +6,7 @@ const Examples = () => {
   return (
     <section
       id="examples"
-      className="flex flex-col items-center justify-end sm:justify-center h-[60rem] sm:h-screen w-full text-text max-sm:mb-14"
+      className="flex flex-col items-center justify-end sm:justify-center min-h-[95vh] w-full text-text"
     >
       <div className="w-full h-[50rem] sm:h-[60rem] mg:h-[42rem] bg-seasalt rounded-2xl relative flex max-mg:flex-col">
         <div className="mg:h-[42rem] h-[60rem] w-full relative bg-[#18181B] rounded-t-2xl mg:rounded-l-2xl">
@@ -20,7 +20,7 @@ const Examples = () => {
         <div className="relative p-8 sm:p-16 md:p-24">
           <p className="font-semibold tracking-tighter">B & C Pest Control</p>
           <h4 className="mt-6 text-4xl md:text-5xl font-calistoga md:max-mg:whitespace-nowrap">
-            A fresh look for a <span className="text-gradient">local pro</span>
+            A <span className="text-gradient">fresh look</span> for a local pro
           </h4>
           <span className="absolute translate-y-10 text-[8rem] leading-none font-calistoga text-gradient opacity-20"></span>
           <p className="sm:w-[33rem] md:w-[40rem] mt-10 sm:mt-16 sm:text-base text-sm">

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Inter, Calistoga } from 'next/font/google';
 import { Lenis as ReactLenis } from '@studio-freight/react-lenis';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
@@ -29,7 +29,6 @@ const calistoga = Calistoga({
 export default function Home() {
   const { scrollY } = useScroll();
   const [pos, setPos] = useState(0);
-  const [innerWidth, setInnerWidth] = useState('');
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setPos(latest);
@@ -49,7 +48,7 @@ export default function Home() {
       )`;
     }
 
-    if (latest >= 2200) {
+    if (latest >= 1700) {
       body.style.backgroundColor = '#0B112B';
       body.style.backgroundImage = `url("/images/dark-bg-texture.svg")`;
       body.style.backgroundImage = `linear-gradient(
@@ -59,7 +58,7 @@ export default function Home() {
       )`;
     }
   });
-  //
+
   return (
     <ReactLenis
       root
@@ -69,19 +68,19 @@ export default function Home() {
         syncTouch: true,
       }}
     >
-      <div
-        className={`${inter.variable} ${calistoga.variable} font-inter selection:bg-purp selection:text-text text-text main-container mx-auto px-6 h-full`}
-      >
+      <div className={`${inter.variable} ${calistoga.variable}`}>
         <Header pos={pos} />
-        <Landing />
-        <About />
-        <ScrollingWords />
-        <Examples />
-        <Services />
-        <ToastProvider>
-          <Contact />
-        </ToastProvider>
-        <Footer />
+        <div className="px-6 mx-auto main-container font-inter selection:bg-purp selection:text-text text-text">
+          <Landing />
+          <About />
+          <ScrollingWords />
+          <Examples />
+          <Services />
+          <ToastProvider>
+            <Contact />
+          </ToastProvider>
+          <Footer />
+        </div>
       </div>
     </ReactLenis>
   );
