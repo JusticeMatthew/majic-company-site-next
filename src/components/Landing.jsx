@@ -20,7 +20,7 @@ const Landing = () => {
         digital presence through stand-out websites & videos. Reach out today
         and get a free quote.
       </p>
-      <ScrollLink to="contact" className="mb-32">
+      <ScrollLink to="contact" className="mb-16">
         <Button>Get a free quote</Button>
       </ScrollLink>
       <ScrollLink

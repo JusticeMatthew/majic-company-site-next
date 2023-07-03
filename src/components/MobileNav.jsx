@@ -5,7 +5,7 @@ import { ScrollLink } from '@/components';
 
 const MobileNav = ({ navItems }) => {
   return (
-    <div className="fixed md:hidden right-4">
+    <div className="fixed md:hidden right-3">
       <Menu as="div" className="relative inline-block">
         {({ open }) => (
           <>
