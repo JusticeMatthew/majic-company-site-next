@@ -7,24 +7,24 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="relative flex w-full min-h-[60vh] mb-12 items-center text-seasalt max-sm:my-12 max-sm:text-sm px-6"
+      className="relative flex w-full h-[min(auto, 60vh)] my-16 items-center text-seasalt max-sm:my-16 max-sm:text-sm md:px-6"
     >
       <motion.div
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col gap-6 sm:w-full w-80"
+        className="flex flex-col w-full gap-8"
       >
         <h4 className="text-5xl tracking-wide font-calistoga">What we offer</h4>
         <div className="flex flex-col justify-between w-auto mg:w-full mg:flex-row max-mg:gap-10">
-          <p className="w-80 text-seasalt/70">
-            You have a business to run. That’s why we go above and beyond to
-            provide the most complete digital service to our clients. From your
-            own domain and hosting, to webdesign and email support.
-            <br />
-            <br />
-            <span className="font-bold">We take care of it.</span>
-          </p>
+          <div>
+            <p className="w-80 text-seasalt/70">
+              You have a business to run. That’s why we go above and beyond to
+              provide the most complete digital service to our clients. From
+              your own domain and hosting, to webdesign and email support.
+            </p>
+            <p className="mt-8 font-bold">We take care of it.</p>
+          </div>
           <motion.div className="grid grid-cols-1 grid-rows-5 gap-4 sm:grid-cols-2 md:max-mg:translate-x-20">
             {services.map((item, idx) => (
               <motion.div

@@ -9,7 +9,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative flex items-center justify-center w-full min-h-screen text-text max-sm:h-[70rem] sm:mb-20"
+      className="relative flex items-center justify-center w-full min-h-screen text-text md:max-mg:min-h-[80vh]"
     >
       <div className="grid justify-center w-full grid-cols-3 gap-10 max-md:gap-4">
         <div className="col-span-3 bg-seasalt h-[30rem] rounded-2xl flex items-center justify-evenly shadow">

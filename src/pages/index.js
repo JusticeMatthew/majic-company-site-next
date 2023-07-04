@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Inter, Calistoga } from 'next/font/google';
 import { Lenis as ReactLenis } from '@studio-freight/react-lenis';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
@@ -13,6 +13,7 @@ import {
   Footer,
   ScrollingWords,
 } from '@/components';
+import handleIntersect from '@/utils/handleIntersect';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,9 +27,29 @@ const calistoga = Calistoga({
   variable: '--font-calistoga',
 });
 
+const intersectOptions = {
+  threshold: 0.5,
+};
+
 export default function Home() {
   const { scrollY } = useScroll();
   const [pos, setPos] = useState(0);
+  // const [prevRatio, setPrevRatio] = useState(0)
+  const [wordsEl, setWordsEl] = useState();
+  const [aboutEl, setAboutEl] = useState();
+  const [examplesEl, setExamplesEl] = useState();
+  const [servicesEl, setServicesEl] = useState();
+  const [contactEl, setContactEl] = useState();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const observer = new IntersectionObserver(
+        handleIntersect,
+        intersectOptions,
+      );
+      observer.observe(document.querySelector('#scrolling-words'));
+    }
+  }, []);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setPos(latest);
