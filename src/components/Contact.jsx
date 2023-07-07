@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import ContactForm from './ContactForm';
 
-const Contact = () => {
+const Contact = ({ setInView }) => {
+  const { ref, inView } = useInView({ threshold: 0.9 });
+  useEffect(() => setInView(inView), [setInView, inView]);
+
   return (
     <section
+      ref={ref}
       id="contact"
       className="flex items-center justify-center min-h-[70vh] w-full text-text relative"
     >

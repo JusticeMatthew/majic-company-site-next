@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Lottie from 'lottie-react';
+import { useInView } from 'react-intersection-observer';
 import benefits from '@/constants/benefits';
 import { MiniLogoSparkles, Button, ScrollLink } from '@/components';
 import working from '@/working.json';
 
-const About = () => {
+const About = ({ setInView }) => {
+  const { ref, inView } = useInView({ threshold: 0.3 });
+  useEffect(() => setInView(inView), [setInView, inView]);
+
   return (
     <section
       id="about"
-      className="relative flex items-center justify-center w-full min-h-screen text-text max-sm:h-[70rem] sm:mb-20"
+      className="relative flex items-center justify-center w-full min-h-screen text-text md:max-mg:min-h-[80vh]"
     >
-      <div className="grid justify-center w-full grid-cols-3 gap-10 max-md:gap-4">
+      <div
+        ref={ref}
+        className="grid justify-center w-full grid-cols-3 gap-10 max-md:gap-4"
+      >
         <div className="col-span-3 bg-seasalt h-[30rem] rounded-2xl flex items-center justify-evenly shadow">
           <Lottie
             animationData={working}
@@ -22,7 +29,7 @@ const About = () => {
               Running your own business is
               <span className="text-gradient"> tough enough</span>
             </p>
-            <p className="mb-6 max-sm:w-60 w-80 md:max-mg:w-60">
+            <p className="mb-3 max-sm:w-60 w-80 md:max-mg:w-60">
               Thats why Majic wants to provide a one stop shop for businesses
               who need worry-free web design & development services at a fair
               rate.
