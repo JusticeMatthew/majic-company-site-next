@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import services from '@/constants/services';
 
-const Services = () => {
+const Services = ({ setInView }) => {
+  const { ref, inView } = useInView({ threshold: 0.9 });
+  useEffect(() => setInView(inView), [setInView, inView]);
+
   return (
     <section
+      ref={ref}
       id="services"
       className="relative flex w-full h-[min(auto, 60vh)] my-16 items-center text-seasalt max-sm:my-16 max-sm:text-sm md:px-6"
     >

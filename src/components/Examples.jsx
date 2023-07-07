@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useInView } from 'react-intersection-observer';
 
-const Examples = () => {
+const Examples = ({ setInView }) => {
+  const { ref, inView } = useInView({ threshold: 0.8 });
+  useEffect(() => setInView(inView), [setInView, inView]);
+
   return (
     <section
+      ref={ref}
       id="examples"
       className="flex flex-col items-center justify-end sm:justify-center min-h-[75vh] w-full text-text"
     >

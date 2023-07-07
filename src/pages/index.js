@@ -3,6 +3,7 @@ import { Inter, Calistoga } from 'next/font/google';
 import { Lenis as ReactLenis } from '@studio-freight/react-lenis';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
 import ToastProvider from '@/providers/ToastProvider';
+import { useInView } from 'react-intersection-observer';
 import {
   Header,
   Landing,
@@ -13,7 +14,6 @@ import {
   Footer,
   ScrollingWords,
 } from '@/components';
-import handleIntersect from '@/utils/handleIntersect';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,35 +27,18 @@ const calistoga = Calistoga({
   variable: '--font-calistoga',
 });
 
-const intersectOptions = {
-  threshold: 0.5,
-};
-
 export default function Home() {
   const { scrollY } = useScroll();
   const [pos, setPos] = useState(0);
-  // const [prevRatio, setPrevRatio] = useState(0)
-  const [wordsEl, setWordsEl] = useState();
-  const [aboutEl, setAboutEl] = useState();
-  const [examplesEl, setExamplesEl] = useState();
-  const [servicesEl, setServicesEl] = useState();
-  const [contactEl, setContactEl] = useState();
+  const [aboutInView, setAboutInView] = useState();
+  const [examplesInView, setExamplesInView] = useState();
+  const [servicesInView, setServicesInView] = useState();
+  const [contactInView, setContactInView] = useState();
+  const { ref: bgRef, inView: bgInView } = useInView({ threshold: 0.19 });
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const observer = new IntersectionObserver(
-        handleIntersect,
-        intersectOptions,
-      );
-      observer.observe(document.querySelector('#scrolling-words'));
-    }
-  }, []);
-
-  useMotionValueEvent(scrollY, 'change', (latest) => {
-    setPos(latest);
     const body = document.body;
-
-    if (latest < 2200) {
+    if (!bgInView) {
       body.style.backgroundColor = '#F8FAFC';
       body.style.backgroundImage = `linear-gradient(
         to right,
@@ -65,19 +48,23 @@ export default function Home() {
       body.style.backgroundImage = `linear-gradient(
         to left,
         rgba(115, 92, 221, 0.2),
-        rgba(27, 82, 153, 0.4) 
+        rgba(27, 82, 153, 0.4)
       )`;
     }
 
-    if (latest >= 1700) {
+    if (bgInView) {
       body.style.backgroundColor = '#0B112B';
       body.style.backgroundImage = `url("/images/dark-bg-texture.svg")`;
       body.style.backgroundImage = `linear-gradient(
         to left,
         rgba(115, 92, 221, 0.2),
-        rgba(27, 82, 153, 0.4) 
+        rgba(27, 82, 153, 0.4)
       )`;
     }
+  }, [bgInView]);
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setPos(latest);
   });
 
   return (
@@ -90,17 +77,26 @@ export default function Home() {
       }}
     >
       <div className={`${inter.variable} ${calistoga.variable}`}>
-        <Header pos={pos} />
+        <Header
+          pos={pos}
+          bgInView={bgInView}
+          about={aboutInView}
+          examples={examplesInView}
+          services={servicesInView}
+          contact={contactInView}
+        />
         <div className="px-6 mx-auto main-container font-inter selection:bg-purp selection:text-text text-text">
           <Landing />
-          <About />
-          <ScrollingWords />
-          <Examples />
-          <Services />
-          <ToastProvider>
-            <Contact />
-          </ToastProvider>
-          <Footer />
+          <About setInView={setAboutInView} />
+          <div ref={bgRef}>
+            <ScrollingWords />
+            <Examples setInView={setExamplesInView} />
+            <Services setInView={setServicesInView} />
+            <ToastProvider>
+              <Contact setInView={setContactInView} />
+            </ToastProvider>
+            <Footer />
+          </div>
         </div>
       </div>
     </ReactLenis>
