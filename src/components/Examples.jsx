@@ -27,7 +27,9 @@ const Examples = ({ setInView }) => {
           <h4 className="mt-8 text-4xl md:text-5xl font-calistoga md:max-mg:whitespace-nowrap">
             A <span className="text-gradient">fresh look</span> for a local pro
           </h4>
-          <span className="absolute translate-y-10 text-[8rem] leading-none font-calistoga text-gradient opacity-20"></span>
+          <span className="absolute translate-y-10 text-[8rem] leading-none font-calistoga text-gradient opacity-20">
+            &quot;
+          </span>
           <p className="mt-16 text-sm sm:text-base">
             Majic created the website for our company B&C Pest Control. We told
             them we wanted something simple and informative and they delivered
