@@ -59,30 +59,40 @@ const Landing = () => {
       </motion.div>
       {/*BG items*/}
       <motion.div
+        initial={{ y: 0, opacity: 0 }}
         animate={{
+          opacity: 0.25,
           y: [0, -20, 10, -15, 15, -20, 20],
           transition: {
-            ease: 'easeInOut',
-            repeatType: 'reverse',
-            duration: 22,
-            repeat: Infinity,
+            y: {
+              ease: 'easeInOut',
+              repeatType: 'reverse',
+              duration: 22,
+              repeat: Infinity,
+            },
+            opacity: { duration: 1 },
           },
         }}
-        className="w-80 h-80 absolute opacity-25 left-[-20rem] bottom-40 pointer-events-none"
+        className="w-80 h-80 absolute left-[-20rem] bottom-40 pointer-events-none"
       >
         <Image src="/images/logo-svg.svg" alt="company logo" fill />
       </motion.div>
       <motion.div
+        initial={{ y: 0, opacity: 0 }}
         animate={{
-          y: [0, 20, -10, 15, -15, 20, -20],
+          opacity: 0.25,
+          y: [0, -20, 10, -15, 15, -20, 20],
           transition: {
-            ease: 'easeInOut',
-            repeatType: 'reverse',
-            duration: 18,
-            repeat: Infinity,
+            y: {
+              ease: 'easeInOut',
+              repeatType: 'reverse',
+              duration: 22,
+              repeat: Infinity,
+            },
+            opacity: { duration: 1 },
           },
         }}
-        className="w-80 h-80 absolute opacity-25 right-[-20rem] top-40 pointer-events-none"
+        className="w-80 h-80 absolute right-[-20rem] top-40 pointer-events-none"
       >
         <Image src="/images/logo-svg.svg" alt="company logo" fill />
       </motion.div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { ScrollLink, MobileNav } from '@/components';
 
 const Header = ({ pos, bgInView, about, examples, services, contact }) => {
@@ -11,7 +12,10 @@ const Header = ({ pos, bgInView, about, examples, services, contact }) => {
   ];
 
   return (
-    <header
+    <motion.header
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
       id="header"
       className={`${
         pos === 0
@@ -49,7 +53,7 @@ const Header = ({ pos, bgInView, about, examples, services, contact }) => {
           ))}
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
