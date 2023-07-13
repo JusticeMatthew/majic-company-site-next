@@ -1,13 +1,13 @@
 const services = [
   { service: 'Custom website design', offset: true },
   { service: 'Search engine optimization', offset: true },
-  { service: 'Video editing & integration' },
-  { service: '10 design revisions' },
-  { service: '24/7 Customer support', offset: true },
-  { service: 'Mobile-friendly designs', offset: true },
-  { service: 'Social media integration' },
-  { service: 'Secure web hosting' },
-  { service: 'Web analytics & tracking', offset: true },
+  { service: 'Mobile-friendly design' },
+  { service: 'Logo design' },
+  { service: 'Video editing & integration', offset: true },
+  { service: 'Social media integration', offset: true },
+  { service: 'E-commerce platform' },
+  { service: 'Content management system' },
+  { service: 'Secure web hosting', offset: true },
   { service: 'Ongoing support', offset: true },
 ];
 
