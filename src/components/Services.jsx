@@ -23,12 +23,15 @@ const Services = ({ setInView }) => {
         <h4 className="text-5xl tracking-wide font-calistoga">What we offer</h4>
         <div className="flex flex-col justify-between w-auto mg:w-full mg:flex-row max-mg:gap-10">
           <div>
-            <p className="w-80 text-seasalt/70">
+            <p className="leading-[1.7rem] w-80 text-seasalt/75">
               You have a business to run. That’s why we go above and beyond to
-              provide the most complete digital service to our clients. From
-              your own domain and hosting, to webdesign and email support.
+              provide the most complete digital solution for our clients. All of
+              our website packages include these services to ensure your
+              customers online experience is
+              <span className="text-lg font-bold tracking-wide text-gradient font-calistoga">
+                &nbsp;Majical.
+              </span>
             </p>
-            <p className="mt-8 font-bold">We take care of it.</p>
           </div>
           <motion.div className="grid grid-cols-1 grid-rows-5 gap-4 sm:grid-cols-2">
             {services.map((item, idx) => (
