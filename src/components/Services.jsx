@@ -30,7 +30,7 @@ const Services = ({ setInView }) => {
             </p>
             <p className="mt-8 font-bold">We take care of it.</p>
           </div>
-          <motion.div className="grid grid-cols-1 grid-rows-5 gap-4 sm:grid-cols-2 md:max-mg:translate-x-20">
+          <motion.div className="grid grid-cols-1 grid-rows-5 gap-4 sm:grid-cols-2">
             {services.map((item, idx) => (
               <motion.div
                 whileInView={{ opacity: 1 }}
@@ -38,7 +38,7 @@ const Services = ({ setInView }) => {
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
                 key={idx}
                 className={`${
-                  item.offset ? 'md:-translate-x-20' : ''
+                  item.offset ? 'mg:-translate-x-20' : ''
                 } items-center gap-5 flex px-6 py-4 rounded-full bg-primary-gradient sm:max-md:text-sm ${
                   idx > 6 ? 'hidden sm:flex' : ''
                 }`}

@@ -13,15 +13,33 @@ const Examples = ({ setInView }) => {
       id="examples"
       className="flex flex-col items-center justify-end sm:justify-center min-h-[75vh] w-full text-text"
     >
-      <div className="w-full h-[57rem] sm:h-[60rem] mg:h-[42rem] bg-seasalt rounded-2xl relative flex max-mg:flex-col">
-        <div className="h-[42rem] mg:w-[100rem] relative bg-[#18181B] rounded-t-2xl mg:rounded-l-2xl">
+      <div className="w-full h-[60rem] mg:h-[42rem] bg-seasalt rounded-2xl relative flex max-mg:flex-col">
+        <video
+          autoPlay
+          playsInline
+          loop
+          muted
+          className="h-[42rem] rounded-l-2xl bg-[#18181B] mg:inline hidden"
+        >
+          <source src="/videos/bc-example-tall.webm" type="video/webm" />
+        </video>
+        <video
+          autoPlay
+          playsInline
+          loop
+          muted
+          className="h-[16rem] sm:h-[20rem] object-cover rounded-t-2xl bg-[#18181B] relative mg:hidden"
+        >
+          <source src="/videos/bc-example.webm" type="video/webm" />
+        </video>
+        {/* <div className="h-[42rem] mg:w-[100rem] relative bg-[#18181B] rounded-t-2xl mg:rounded-l-2xl">
           <Image
-            src="/images/bcmockup.webp"
+            src="/images/bc-example.gif"
             alt="b & c pest control website"
             fill
             className="object-cover object-top mg:object-fill max-mg:rounded-t-2xl mg:rounded-l-2xl"
           />
-        </div>
+        </div> */}
         <div className="relative p-8 sm:p-16 md:p-24">
           <p className="font-semibold tracking-tighter">B & C Pest Control</p>
           <h4 className="mt-8 text-4xl md:text-5xl font-calistoga md:max-mg:whitespace-nowrap">
@@ -30,7 +48,7 @@ const Examples = ({ setInView }) => {
           <span className="absolute translate-y-10 text-[8rem] leading-none font-calistoga text-gradient opacity-20">
             &quot;
           </span>
-          <p className="mt-16 text-sm sm:text-base">
+          <p className="mt-16 text-sm sm:text-base max-w-[240ch]">
             Majic created the website for our company B&C Pest Control. We told
             them we wanted something simple and informative and they delivered
             better than we expected while keeping us updated along the way and
