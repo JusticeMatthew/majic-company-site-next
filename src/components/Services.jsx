@@ -26,7 +26,7 @@ const Services = ({ setInView }) => {
             <p className="w-80 text-seasalt/75">
               You have a business to run. That’s why we go above and beyond to
               provide the most complete digital service to our clients. From
-              your own domain and hosting, to webdesign and email support.
+              your own domain and hosting, to web design and email support.
             </p>
             <p className="mt-8 font-bold">We take care of it.</p>
           </div>
