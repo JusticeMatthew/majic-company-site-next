@@ -19,7 +19,7 @@ const Examples = ({ setInView }) => {
           playsInline
           loop
           muted
-          className="h-[42rem] rounded-l-2xl bg-[#18181B] mg:inline hidden"
+          className="h-[42rem] rounded-l-2xl bg-black mg:inline hidden"
         >
           <source src="/videos/bc-example-tall.webm" type="video/webm" />
         </video>
@@ -28,7 +28,7 @@ const Examples = ({ setInView }) => {
           playsInline
           loop
           muted
-          className="h-[16rem] sm:h-[20rem] object-cover rounded-t-2xl bg-[#18181B] relative mg:hidden"
+          className="h-[16rem] sm:h-[20rem] object-cover rounded-t-2xl bg-black relative mg:hidden"
         >
           <source src="/videos/bc-example.webm" type="video/webm" />
         </video>
