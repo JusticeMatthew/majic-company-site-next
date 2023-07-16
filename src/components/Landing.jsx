@@ -38,11 +38,11 @@ const Landing = () => {
         transition={{ delay: 1, duration: 1 }}
         className="flex flex-col items-center justify-center"
       >
-        <h2 className="mt-32 mb-8 text-4xl sm:text-6xl md:text-7xl font-calistoga">
+        <h2 className="mt-32 mb-8 text-4xl sm:text-6xl md:text-8xl font-calistoga">
           We build beautiful websites for great businesses like&nbsp;
           <span className="text-gradient">yours</span>
         </h2>
-        <p className="mb-16 md:text-lg max-w-[65ch]">
+        <p className="mb-16 md:text-xl max-w-[65ch]">
           We help local businesses find new customers online and grow their
           digital presence through stand-out websites & videos. Reach out today
           and get a free quote.

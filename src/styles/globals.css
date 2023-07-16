@@ -31,8 +31,9 @@ body {
   transition-duration: 300ms !important;
 }
 
+/* 100rem */
 .main-container {
-  width: min(75rem, 100%);
+  width: min(100rem, 100%);
 }
 
 html.lenis {

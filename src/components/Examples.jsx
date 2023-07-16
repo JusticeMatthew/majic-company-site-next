@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
@@ -8,20 +9,24 @@ const Examples = ({ setInView }) => {
   useEffect(() => setInView(inView), [setInView, inView]);
 
   return (
-    <section
+    <motion.section
+      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      transition={{ duration: 1.2, delay: 0.5 }}
       ref={ref}
       id="examples"
-      className="flex flex-col items-center justify-end sm:justify-center min-h-[75vh] w-full text-text"
+      className="flex flex-col justify-end w-full min-h-screen sm:justify-center text-seasalt"
     >
-      <div className="w-full h-[60rem] mg:h-[42rem] bg-seasalt rounded-2xl relative flex max-mg:flex-col">
+      <h4 className="mb-16 text-6xl font-calistoga">Our latest client...</h4>
+      <div className="relative flex items-center w-full max-mg:flex-col">
         <video
           autoPlay
           playsInline
           loop
           muted
-          className="h-[42rem] rounded-l-2xl bg-black mg:inline hidden"
+          className="h-[24rem] rounded-lg bg-black mg:inline hidden"
         >
-          <source src="/videos/bc-example-tall.webm" type="video/webm" />
+          <source src="/videos/bc-example-new.webm" type="video/webm" />
         </video>
         <video
           autoPlay
@@ -30,7 +35,7 @@ const Examples = ({ setInView }) => {
           muted
           className="h-[16rem] sm:h-[20rem] object-cover rounded-t-2xl bg-black relative mg:hidden"
         >
-          <source src="/videos/bc-example.webm" type="video/webm" />
+          <source src="/videos/bc-example-new.webm" type="video/webm" />
         </video>
         {/* <div className="h-[42rem] mg:w-[100rem] relative bg-[#18181B] rounded-t-2xl mg:rounded-l-2xl">
           <Image
@@ -40,47 +45,59 @@ const Examples = ({ setInView }) => {
             className="object-cover object-top mg:object-fill max-mg:rounded-t-2xl mg:rounded-l-2xl"
           />
         </div> */}
-        <div className="relative p-8 sm:p-16 md:p-24">
-          <p className="font-semibold tracking-tighter">B & C Pest Control</p>
-          <h4 className="mt-8 text-4xl md:text-5xl font-calistoga md:max-mg:whitespace-nowrap">
-            A <span className="text-gradient">fresh look</span> for a local pro
-          </h4>
-          <span className="absolute translate-y-10 text-[8rem] leading-none font-calistoga text-gradient opacity-20">
-            &quot;
-          </span>
-          <p className="mt-16 text-sm sm:text-base max-w-[240ch]">
-            Majic created the website for our company B&C Pest Control. We told
-            them we wanted something simple and informative and they delivered
-            better than we expected while keeping us updated along the way and
-            listening to our feedback. Their team also assisted in designing a
-            company logo, acquiring our domain name, and took care of hosting
-            everything and all of the related services. We would highly
-            recommend Majic for website design, especially for companies looking
-            for someone with a creative eye.
+        <div className="relative p-8 sm:p-16 md:py-0 md:pl-24 md:pr-0">
+          <p className="text-lg font-bold tracking-tighter text-gradient">
+            B & C Pest Control
           </p>
-          <p className="mt-16 mb-8 text-lg tracking-tight">
-            Garry & JJ Reese
-            <span className="block text-sm opacity-75">Owners</span>
+          <p className="mt-8 text-2xl text-seasalt/75">
+            Establishing a professional and polished website that underscores
+            the brand&apos;s reputation for exceptional quality and attention to
+            detail
           </p>
-          <div className="h-auto border-b-2 border-transparent w-fit hover:border-b-2 hover:border-text/50">
-            <Link
+
+          {/* <div className="h-auto border-b-2 border-transparent w-fit hover:border-b-2 hover:border-text/50"> */}
+          {/* <Link
               href="https://www.bandcpestcontrol.com"
               target="blank"
-              className="text-xs text-text/80"
+              className="text-xs text-[#7b8c96]"
             >
               Visit
               <Image
                 src="/images/up-right-arrow.svg"
                 alt="arrow icon"
-                height={15}
-                width={15}
-                className="inline ml-2 opacity-60"
+                height={12}
+                width={12}
+                className="inline ml-2 opacity-6"
               />
-            </Link>
-          </div>
+            </Link> */}
+          {/* </div> */}
         </div>
       </div>
-    </section>
+      <h4 className="mx-auto mt-32 text-5xl font-calistoga">
+        ...and what they have to say about us
+      </h4>
+      <div className="relative mx-auto">
+        <span className="absolute translate-y-10 -translate-x-20 text-[8rem] leading-none font-calistoga text-gradient">
+          &quot;
+        </span>
+        <p className="mt-16 text-sm sm:text-lg max-w-[75ch] text-center">
+          Majic created the website for our company B&C Pest Control. We told
+          them we wanted something simple and informative and they delivered
+          better than we expected while keeping us updated along the way and
+          listening to our feedback. Their team also assisted in designing a
+          company logo and acquiring our domain name. We would highly recommend
+          Majic for website design, especially for companies looking for someone
+          with a creative eye.
+        </p>
+        <span className="absolute translate-x-16 -translate-y-10 right-0 text-[8rem] leading-none font-calistoga text-gradient">
+          &quot;
+        </span>
+        <p className="mt-16 text-lg tracking-tight">
+          Garry & JJ Reese
+          <span className="block text-sm opacity-75">Owners</span>
+        </p>
+      </div>
+    </motion.section>
   );
 };
 

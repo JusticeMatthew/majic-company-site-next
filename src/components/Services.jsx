@@ -23,9 +23,9 @@ const Services = ({ setInView }) => {
         transition={{ duration: 0.5 }}
         className="flex flex-col w-full gap-8"
       >
-        <h4 className="text-5xl tracking-wide font-calistoga">What we offer</h4>
-        <div className="flex flex-col justify-between w-auto mg:w-full max-mg:gap-10">
-          <p className="max-w-[75ch] text-seasalt/75">
+        <h4 className="text-6xl tracking-wide font-calistoga">What we offer</h4>
+        <div className="flex flex-col justify-between w-auto mg:w-full max-mg:gap-10 mg:text-lg">
+          <p className=" max-w-[75ch] text-seasalt/75">
             You have a business to run. That’s why we go above and beyond to
             provide the most complete digital service to our clients. From your
             own domain and hosting, to web design and email support.
@@ -35,13 +35,13 @@ const Services = ({ setInView }) => {
             {pricingPlans.map((plan) => (
               <div
                 key={plan}
-                className={`flex flex-col justify-between h-auto p-8 shadow bg-seasalt rounded-2xl text-text relative ${
+                className={`flex flex-col justify-between h-auto p-16 shadow bg-seasalt rounded-2xl text-text relative ${
                   plan.recommended ? 'ring-[3px] ring-blurple' : ''
                 }`}
               >
                 {plan.recommended && (
                   <div className="absolute left-0 flex justify-center w-full text-center -top-4 text-seasalt">
-                    <p className="px-12 py-1 font-medium rounded-full w-fit bg-primary-gradient">
+                    <p className="px-20 py-1 font-medium rounded-full w-fit bg-primary-gradient">
                       Recommended
                     </p>
                   </div>
