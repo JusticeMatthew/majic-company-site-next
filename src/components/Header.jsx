@@ -6,7 +6,7 @@ import { ScrollLink, MobileNav } from '@/components';
 const Header = ({ pos, bgInView, about, examples, services, contact }) => {
   const navItems = [
     ['about', 'About Us', about, -100],
-    ['examples', 'Examples', examples, 0],
+    ['examples', 'Our Work', examples, 0],
     ['services', 'Services', services, -200],
     ['contact', 'Contact', contact, 0],
   ];

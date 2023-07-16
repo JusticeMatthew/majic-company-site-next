@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contactFormValidator } from '@/utils/contactFormValidator';
-import { Button } from '@/components';
+import { PrimaryButton } from '@/components/Button';
 
 const ContactForm = () => {
   const {
@@ -116,13 +116,13 @@ const ContactForm = () => {
           We need a valid email
         </p>
       </div>
-      <Button
+      <PrimaryButton
         type="submit"
         disabled={errors.name || errors.email ? true : false}
         className="mt-8 translate-x-2 w-[17.8rem] sm:w-[25.3rem] mg:w-[29.3rem] disabled:opacity-50 disabled:pointer-events-none"
       >
         Request a quote
-      </Button>
+      </PrimaryButton>
     </form>
   );
 };

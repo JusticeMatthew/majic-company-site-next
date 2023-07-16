@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Lottie from 'lottie-react';
 import scrollDown from '@/scrollDown.json';
-import { Button, MagicParticles, ScrollLink } from '@/components';
+import { MagicParticles, ScrollLink } from '@/components';
+import { PrimaryButton } from '@/components/Button';
 
 const Landing = () => {
   const [particlesVisible, setParticlesVisible] = useState(true);
@@ -47,7 +48,7 @@ const Landing = () => {
           and get a free quote.
         </p>
         <ScrollLink to="contact" className="mb-16">
-          <Button>Get a free quote</Button>
+          <PrimaryButton>Get a free quote</PrimaryButton>
         </ScrollLink>
         <ScrollLink
           alt="scroll down indicator"

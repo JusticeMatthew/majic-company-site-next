@@ -3,8 +3,9 @@ import Image from 'next/image';
 import Lottie from 'lottie-react';
 import { useInView } from 'react-intersection-observer';
 import benefits from '@/constants/benefits';
-import { MiniLogoSparkles, Button, ScrollLink } from '@/components';
-import working from '@/working.json';
+import { MiniLogoSparkles, ScrollLink } from '@/components';
+import { PrimaryButton } from '@/components/Button';
+import workingV2 from '@/workingV2.json';
 
 const About = ({ setInView }) => {
   const { ref, inView } = useInView({ threshold: 0.3 });
@@ -17,11 +18,11 @@ const About = ({ setInView }) => {
     >
       <div
         ref={ref}
-        className="grid justify-center w-full grid-cols-3 gap-10 max-md:gap-4"
+        className="grid justify-center w-full grid-cols-3 gap-4 md:gap-8"
       >
         <div className="col-span-3 bg-seasalt h-[30rem] rounded-2xl flex items-center justify-evenly shadow">
           <Lottie
-            animationData={working}
+            animationData={workingV2}
             className="w-[28rem] h-[28rem] hidden md:inline max-mg:p-6"
           />
           <div className="md:max-mg:w-[18rem] max-sm:w-[18rem] w-[22rem] mx-6 flex flex-col gap-5 max-md:items-center max-md:justify-center max-md:text-center">
@@ -35,9 +36,9 @@ const About = ({ setInView }) => {
               rate.
             </p>
             <ScrollLink to="contact">
-              <Button className="md:max-mg:w-[17rem] w-[21rem] max-sm:w-60">
+              <PrimaryButton className="md:max-mg:w-[17rem] w-[21rem] max-sm:w-60">
                 Get a free quote
-              </Button>
+              </PrimaryButton>
             </ScrollLink>
           </div>
         </div>
