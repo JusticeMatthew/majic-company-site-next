@@ -48,7 +48,7 @@ const Landing = () => {
           and get a free quote.
         </p>
         <ScrollLink to="contact" className="mb-16">
-          <PrimaryButton>Get a free quote</PrimaryButton>
+          <PrimaryButton className="px-12 py-3">Get a free quote</PrimaryButton>
         </ScrollLink>
         <ScrollLink
           alt="scroll down indicator"

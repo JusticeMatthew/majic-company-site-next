@@ -8,21 +8,20 @@ import { PrimaryButton, SecondaryButton } from '@/components/Button';
 import pricingPlans from '@/constants/pricingPlans';
 
 const Services = ({ setInView }) => {
-  const { ref, inView } = useInView({ threshold: 0.9 });
+  const { ref, inView } = useInView({ threshold: 0.5 });
+
   useEffect(() => setInView(inView), [setInView, inView]);
 
   return (
-    <section
+    <motion.section
+      initial={{ y: 500, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 100 }}
+      transition={{ duration: 1.3 }}
       ref={ref}
       id="services"
       className="relative flex w-full h-[min(auto, 60vh)] my-16 items-center text-seasalt max-sm:text-sm"
     >
-      <motion.div
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-col w-full gap-8"
-      >
+      <div className="flex flex-col w-full gap-8">
         <h4 className="text-6xl tracking-wide font-calistoga">What we offer</h4>
         <div className="flex flex-col justify-between w-auto mg:w-full max-mg:gap-10 mg:text-lg">
           <p className=" max-w-[75ch] text-seasalt/75">
@@ -78,7 +77,9 @@ const Services = ({ setInView }) => {
                   <div className="flex justify-center w-full mt-8">
                     <ScrollLink to="contact">
                       {plan.recommended ? (
-                        <PrimaryButton>Contact us</PrimaryButton>
+                        <PrimaryButton className="px-12 py-3">
+                          Contact us
+                        </PrimaryButton>
                       ) : (
                         <SecondaryButton>Contact us</SecondaryButton>
                       )}
@@ -89,8 +90,8 @@ const Services = ({ setInView }) => {
             ))}
           </div>
         </div>
-      </motion.div>
-    </section>
+      </div>
+    </motion.section>
   );
 };
 

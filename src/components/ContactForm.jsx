@@ -88,7 +88,7 @@ const ContactForm = () => {
           We need your name or your companies name
         </p>
       </div>
-      <div className="h-28">
+      <div className="mb-8 h-28">
         <label htmlFor="email" className="ml-5 text-lg font-semibold">
           Email
         </label>
@@ -119,7 +119,7 @@ const ContactForm = () => {
       <PrimaryButton
         type="submit"
         disabled={errors.name || errors.email ? true : false}
-        className="mt-8 translate-x-2 w-[17.8rem] sm:w-[25.3rem] mg:w-[29.3rem] disabled:opacity-50 disabled:pointer-events-none"
+        className="px-12 py-3 disabled:opacity-50 disabled:pointer-events-none"
       >
         Request a quote
       </PrimaryButton>

@@ -36,7 +36,7 @@ const About = ({ setInView }) => {
               rate.
             </p>
             <ScrollLink to="contact">
-              <PrimaryButton className="md:max-mg:w-[17rem] w-[21rem] max-sm:w-60">
+              <PrimaryButton className="md:max-mg:w-[17rem] w-[21rem] max-sm:w-60 px-12 py-3">
                 Get a free quote
               </PrimaryButton>
             </ScrollLink>
