@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Lottie from 'lottie-react';
-import scrollDown from '@/scrollDown.json';
+import scrollDownV3 from '@/scrollDownV3.json';
 import { MagicParticles, ScrollLink } from '@/components';
 import { PrimaryButton } from '@/components/Button';
 
@@ -44,18 +44,15 @@ const Landing = () => {
         </h2>
         <p className="mb-16 md:text-xl max-w-[65ch]">
           We help local businesses find new customers online and grow their
-          digital presence through stand-out websites & videos. Reach out today
-          and get a free quote.
+          digital presence through stand-out websites & videos. With our
+          affordable plans and enchanting design we&apos;ll create a captivating
+          experience for your audience.
         </p>
-        <ScrollLink to="contact" className="mb-16">
-          <PrimaryButton className="px-12 py-3">Get a free quote</PrimaryButton>
+        <ScrollLink to="services" offset={-600} className="mb-16">
+          <PrimaryButton className="px-12 py-3">See our plans</PrimaryButton>
         </ScrollLink>
-        <ScrollLink
-          alt="scroll down indicator"
-          to="about"
-          className="flex items-center justify-center w-8 h-10 rounded-full bg-primary-gradient"
-        >
-          <Lottie animationData={scrollDown} className="w-8 h-12" />
+        <ScrollLink alt="scroll down indicator" to="about" offset={-100}>
+          <Lottie animationData={scrollDownV3} className="w-12 h-12" />
         </ScrollLink>
       </motion.div>
       {/*BG items*/}

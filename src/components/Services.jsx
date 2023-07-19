@@ -26,8 +26,8 @@ const Services = ({ setInView }) => {
         <div className="flex flex-col justify-between w-auto mg:w-full max-mg:gap-10 mg:text-lg">
           <p className=" max-w-[75ch] text-seasalt/75">
             You have a business to run. That’s why we go above and beyond to
-            provide the most complete digital service to our clients. From your
-            own domain and hosting, to web design and email support.
+            provide the most complete digital service to our clients at an
+            affordable price. Everything you need to thrive online.
           </p>
           <p className="mt-8 font-bold">We take care of it.</p>
           <div className="grid grid-cols-3 gap-8 mt-16">

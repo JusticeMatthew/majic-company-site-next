@@ -20,8 +20,8 @@ const Header = ({ pos, bgInView, about, examples, services, contact }) => {
       className={`${
         pos === 0
           ? `bg-none`
-          : `${bgInView ? 'bg-seasalt shadow' : 'bg-seasalt/10 shadow'}`
-      } transition-colors fixed z-50 px-4 flex items-center h-20 top-0 backdrop-blur duration-300 w-screen`}
+          : `${bgInView ? 'bg-seasalt shadow' : 'bg-seasalt/20 shadow'}`
+      } transition-all fixed z-50 px-4 flex items-center h-20 top-0 backdrop-blur duration-300 w-screen`}
     >
       <div className="flex items-center justify-between px-2 mx-auto sm:px-4 main-container">
         <ScrollLink to="home" className="flex gap-2 cursor-pointer">
