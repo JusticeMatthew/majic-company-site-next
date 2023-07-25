@@ -36,8 +36,8 @@ const About = ({ setInView }) => {
               rate.
             </p>
             <ScrollLink to="services" offset={-600}>
-              <PrimaryButton className="md:max-mg:w-[17rem] w-[21rem] max-sm:w-60 px-12 py-3">
-                Discover
+              <PrimaryButton className="sm:w-[17rem] mg:w-[21rem] w-60 px-3 sm:px-12 py-3 max-sm:text-sm">
+                See our affordable plans
               </PrimaryButton>
             </ScrollLink>
           </div>

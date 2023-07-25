@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import Lottie from 'lottie-react';
-import scrollDownV3 from '@/scrollDownV3.json';
 import { MagicParticles, ScrollLink } from '@/components';
-import { PrimaryButton } from '@/components/Button';
+import { PrimaryButton, SecondaryButton } from '@/components/Button';
 
 const Landing = () => {
   const [particlesVisible, setParticlesVisible] = useState(true);
@@ -48,12 +46,16 @@ const Landing = () => {
           affordable plans and enchanting design we&apos;ll create a captivating
           experience for your audience.
         </p>
-        <ScrollLink to="services" offset={-600} className="mb-16">
-          <PrimaryButton className="px-12 py-3">See our plans</PrimaryButton>
-        </ScrollLink>
-        <ScrollLink alt="scroll down indicator" to="about" offset={-100}>
-          <Lottie animationData={scrollDownV3} className="w-12 h-12" />
-        </ScrollLink>
+        <div className="flex flex-col gap-6 mb-16">
+          <ScrollLink to="contact">
+            <PrimaryButton className="px-12 py-3">
+              Reach out and discuss your project
+            </PrimaryButton>
+          </ScrollLink>
+          <ScrollLink to="about" offset={-100}>
+            <SecondaryButton className="">More about Majic</SecondaryButton>
+          </ScrollLink>
+        </div>
       </motion.div>
       {/*BG items*/}
       <motion.div

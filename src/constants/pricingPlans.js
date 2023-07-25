@@ -7,7 +7,7 @@ const pricingPlans = [
     name: 'Personal',
     recommended: false,
     services: [
-      'Enchanting mobile-friendly webpage',
+      'Custom mobile-friendly webpage',
       'Personalized domain',
       'Search engine optimization',
       'Google Business listing',
@@ -21,7 +21,7 @@ const pricingPlans = [
     name: 'Business',
     recommended: true,
     services: [
-      'Enchanting mobile-friendly webpage',
+      'Custom mobile-friendly webpage',
       'Personalized domain',
       'Search engine optimization',
       'Google Business listing',
@@ -36,7 +36,7 @@ const pricingPlans = [
     name: 'Commerce',
     recommended: false,
     services: [
-      'Enchanting mobile-friendly webpage',
+      'Custom mobile-friendly webpage',
       'Personalized domain',
       'Search engine optimization',
       'Google Business listing',

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -6,23 +6,70 @@ import ContactForm from './ContactForm';
 
 const Contact = ({ setInView }) => {
   const { ref, inView } = useInView({ threshold: 0.9 });
+  const [switchToggled, setSwitchToggled] = useState(false);
+
+  const toggleSwitch = () => setSwitchToggled(!switchToggled);
+
+  const handleLeftTextClick = () => setSwitchToggled(false);
+  const handleRightTextClick = () => setSwitchToggled(true);
+
   useEffect(() => setInView(inView), [setInView, inView]);
 
   return (
     <section
       ref={ref}
       id="contact"
-      className="flex items-center justify-center min-h-[70vh] w-full text-text relative"
+      className="relative flex flex-col items-center justify-center w-full min-h-screen text-text"
     >
-      <div className="w-full bg-seasalt h-[50rem] sg:h-[34rem] rounded-2xl p-24 sg:flex-row flex-col flex max-sg:items-center justify-between">
-        <div className="w-60">
-          <h5 className="mb-8 text-5xl font-calistoga">
-            Request a<br />
-            <span className="text-gradient">free quote</span>
-          </h5>
-          <p>
-            Get started and request a free quote for your website, video or
-            managing your social media platform!
+      <h4 className="mb-8 text-6xl font-calistoga text-seasalt">
+        Ready to see what Majic can do for&nbsp;
+        <span className="text-gradient">your</span>&nbsp;business?
+      </h4>
+      <p className="text-seasalt/75 max-w-[60ch] text-center text-lg mb-16">
+        Connect with us through a message or video call and let Majic illuminate
+        the path to online greatness and amaze your audience with every click.
+      </p>
+      <div className="flex items-center justify-center gap-8 mb-8 text-seasalt">
+        <p
+          onClick={handleLeftTextClick}
+          className={`cursor-pointer ${
+            switchToggled ? 'opacity-40' : 'opacity-100'
+          }`}
+        >
+          Send a message
+        </p>
+        <motion.div
+          onClick={toggleSwitch}
+          className={`flex items-center ${
+            switchToggled ? 'justify-end' : 'justify-start'
+          } h-8 p-1 rounded-full cursor-pointer w-14 bg-seasalt`}
+        >
+          <motion.div
+            layout
+            transition={{
+              type: 'spring',
+              stiffness: 700,
+              damping: 30,
+            }}
+            className="z-10 w-6 h-6 rounded-full bg-primary-gradient"
+          />
+        </motion.div>
+        <p
+          onClick={handleRightTextClick}
+          className={`cursor-pointer ${
+            switchToggled ? 'opacity-100' : 'opacity-40'
+          }`}
+        >
+          Schedule video call
+        </p>
+      </div>
+      <div className="flex flex-col w-full p-24 min-h-20 bg-seasalt rounded-2xl max-sg:items-center justify-evenly">
+        <div className="mb-20">
+          <h5 className="mb-8 text-5xl font-calistoga">Send us a message</h5>
+          <p className="max-w-[65ch] text-lg">
+            Have questions? Need more information? We would love to hear about
+            your business! Reach out today and you&apos;ll hear from us within
+            48 hours.
           </p>
         </div>
         <ContactForm />

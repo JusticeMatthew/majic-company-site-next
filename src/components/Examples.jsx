@@ -4,61 +4,21 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const Examples = ({ setInView }) => {
+const Examples = ({ setInView, bgDark }) => {
   const { ref, inView } = useInView({ threshold: 0.6 });
-  const section = {
-    visible: {
-      x: 0,
-      opacity: '100%',
-      transition: {
-        duration: 1,
-        when: 'beforeChildren',
-      },
-    },
-    hidden: {
-      x: 800,
-      opacity: '0%',
-      transition: {
-        when: 'afterChildren',
-      },
-    },
-  };
-
-  const content = {
-    visible: (i) => ({
-      opacity: i,
-    }),
-    hidden: {
-      opacity: '0%',
-    },
-    transition: { opacity: 0.5 },
-  };
 
   useEffect(() => setInView(inView), [setInView, inView]);
 
   return (
-    <motion.section
-      variants={section}
-      initial="hidden"
-      whileInView="visible"
+    <section
       ref={ref}
       id="examples"
-      className="flex flex-col justify-center w-full min-h-[60vh] text-seasalt"
+      className={`first-letter:flex flex-col justify-center w-full min-h-[60vh] text-seasalt ${
+        bgDark ? 'opacity-100' : 'opacity-0'
+      } transition-opacity duration-200`}
     >
-      <motion.h4
-        variants={content}
-        custom={'100%'}
-        className="mb-16 text-6xl font-calistoga"
-      >
-        Our latest client
-      </motion.h4>
-      <motion.p
-        variants={content}
-        custom={'80%'}
-        className="mb-8 font-medium tracking-wider"
-      >
-        B&C Pest Control
-      </motion.p>
+      <h4 className="mb-16 text-6xl font-calistoga">Our latest client</h4>
+      <p className="mb-8 font-medium tracking-wider">B&C Pest Control</p>
       <div className="relative flex items-center w-full max-mg:flex-col">
         <video
           autoPlay
@@ -116,7 +76,7 @@ const Examples = ({ setInView }) => {
 
         {/* </div> */}
       </div>
-    </motion.section>
+    </section>
   );
 };
 

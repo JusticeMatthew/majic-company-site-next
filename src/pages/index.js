@@ -30,6 +30,7 @@ const calistoga = Calistoga({
 export default function Home() {
   const { scrollY } = useScroll();
   const [pos, setPos] = useState(0);
+  const [bgDark, setBgDark] = useState(false);
   const [aboutInView, setAboutInView] = useState();
   const [examplesInView, setExamplesInView] = useState();
   const [servicesInView, setServicesInView] = useState();
@@ -39,6 +40,7 @@ export default function Home() {
   useEffect(() => {
     const body = document.body;
     if (!bgInView) {
+      setBgDark(false);
       body.style.backgroundColor = '#F8FAFC';
       body.style.backgroundImage = `linear-gradient(
         to right,
@@ -53,6 +55,7 @@ export default function Home() {
     }
 
     if (bgInView) {
+      setBgDark(true);
       body.style.backgroundColor = '#0B112B';
       body.style.backgroundImage = `url("/images/dark-bg-texture.svg")`;
       body.style.backgroundImage = `linear-gradient(
@@ -90,7 +93,7 @@ export default function Home() {
           <About setInView={setAboutInView} />
           <div ref={bgRef}>
             <ScrollingWords />
-            <Examples setInView={setExamplesInView} />
+            <Examples setInView={setExamplesInView} bgDark={bgDark} />
             <Services setInView={setServicesInView} />
             <ToastProvider>
               <Contact setInView={setContactInView} />
