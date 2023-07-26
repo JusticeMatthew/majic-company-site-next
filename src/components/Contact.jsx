@@ -15,8 +15,21 @@ const Contact = ({ setInView }) => {
     setTimeout(() => setMorphing(false), 540);
   };
 
-  const handleLeftTextClick = () => setSwitchToggled(false);
-  const handleRightTextClick = () => setSwitchToggled(true);
+  const handleLeftTextClick = () => {
+    if (switchToggled === true) {
+      setMorphing(true);
+    }
+    setSwitchToggled(false);
+    setTimeout(() => setMorphing(false), 540);
+  };
+
+  const handleRightTextClick = () => {
+    if (switchToggled === false) {
+      setMorphing(true);
+    }
+    setSwitchToggled(true);
+    setTimeout(() => setMorphing(false), 540);
+  };
 
   useEffect(() => setInView(inView), [setInView, inView]);
 
