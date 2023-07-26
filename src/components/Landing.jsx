@@ -49,7 +49,7 @@ const Landing = () => {
         <div className="flex flex-col gap-6 mb-16">
           <ScrollLink to="contact">
             <PrimaryButton className="px-12 py-3">
-              Reach out and discuss your project
+              Connect with us today
             </PrimaryButton>
           </ScrollLink>
           <ScrollLink to="about" offset={-100}>

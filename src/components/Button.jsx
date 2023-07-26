@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const PrimaryButton = ({ children, className, ...props }) => {
+const PrimaryButton = ({ children, className, disabled, ...props }) => {
   return (
     <motion.button
       layout
+      disabled={disabled}
       transition={{ duration: 0.2 }}
-      className="relative p-1 text-lg font-medium tracking-wide rounded-full bg-primary-gradient text-seasalt group"
+      className="relative p-1 text-lg font-medium tracking-wide rounded-full bg-primary-gradient text-seasalt group disabled:opacity-50 disabled:pointer-events-none"
       {...props}
     >
       <motion.div
@@ -16,7 +17,7 @@ const PrimaryButton = ({ children, className, ...props }) => {
       />
       <motion.span
         layout
-        transition={{ duration: 0.2, type: 'spring' }}
+        transition={{ duration: 0.2 }}
         className={`${className} relative z-20 block rounded-full group-hover:bg-text`}
       >
         {children}

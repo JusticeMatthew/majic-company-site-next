@@ -36,10 +36,10 @@ const ContactForm = () => {
       );
       reset();
       setSending(0);
-      setTimeout(() => setSending(false), 3000);
+      setTimeout(() => setSending(false), 4000);
     } catch (error) {
-      console.log(error);
       if (error instanceof z.ZodError) {
+        setSending(false);
         setError('name', { message: error.message });
         setError('email', { message: error.message });
         setError('message', { message: error.message });
@@ -53,7 +53,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit(sendEmail)}
       className="flex flex-col w-full text-text"
     >
-      <div className="flex flex-row w-full gap-24">
+      <div className="flex flex-row w-full gap-24 h-96">
         <div className="w-full">
           <div className="mb-4">
             <label htmlFor="name" className="ml-5 text-lg font-semibold">
@@ -70,7 +70,6 @@ const ContactForm = () => {
                   : 'hover:ring-4 focus-within:ring-4 ring-blurple'
               }`}
             />
-
             <p
               className={
                 errors.name
@@ -82,23 +81,9 @@ const ContactForm = () => {
             </p>
           </div>
           <div className="mb-4 h-28">
-            <label htmlFor="company" className="ml-5 text-lg font-semibold">
-              Company
-            </label>
-            <div className={`flex flex-col w-full p-1 rounded-full`}>
-              <input
-                id="company"
-                type="text"
-                {...register('company')}
-                className="w-full p-5 mt-2 h-14 rounded-2xl bg-slate-200 focus:outline-none hover:ring-4 focus-within:ring-4 ring-blurple"
-              />
-            </div>
-          </div>
-          <div className="mb-10 h-28">
             <label htmlFor="email" className="ml-5 text-lg font-semibold">
               Email
             </label>
-
             <input
               id="email"
               type="email"
@@ -119,8 +104,21 @@ const ContactForm = () => {
               We need a valid email
             </p>
           </div>
+          <div className="h-28">
+            <label htmlFor="company" className="ml-5 text-lg font-semibold">
+              Company
+            </label>
+            <div className={`flex flex-col w-full p-1 rounded-full`}>
+              <input
+                id="company"
+                type="text"
+                {...register('company')}
+                className="w-full p-5 mt-2 h-14 rounded-2xl bg-slate-200 focus:outline-none hover:ring-4 focus-within:ring-4 ring-blurple"
+              />
+            </div>
+          </div>
         </div>
-        <div className="w-full pb-[5.8rem]">
+        <div className="w-full">
           <label
             htmlFor="Message"
             className="block mb-2 ml-5 text-lg font-semibold"
@@ -131,7 +129,7 @@ const ContactForm = () => {
             id="message"
             type="textarea"
             {...register('message')}
-            className={`w-full h-full p-5 rounded-2xl bg-slate-200 focus:outline-none ${
+            className={`resize-none w-full h-[83%] p-5 rounded-2xl bg-slate-200 focus:outline-none ${
               errors.message
                 ? 'focus-within:ring-4 ring-4 ring-red-700'
                 : 'hover:ring-4 focus-within:ring-4 ring-blurple'
@@ -148,20 +146,28 @@ const ContactForm = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-center w-full mt-6">
+      <div className="flex justify-center w-full mt-8">
         <PrimaryButton
           type="submit"
-          disabled={errors.name || errors.email ? true : false}
+          disabled={
+            errors.name || errors.email || errors.message ? true : false
+          }
           className={`${
-            sending ? 'px-12 py-3' : 'px-40 py-3'
-          } disabled:opacity-50 disabled:pointer-events-none`}
+            sending
+              ? 'px-12 py-3 group-hover:bg-transparent cursor-default'
+              : 'px-40 py-3'
+          } ${
+            sending === 0
+              ? 'group-hover:bg-transparent cursor-default'
+              : 'cursor-pointer'
+          }`}
         >
           {sending ? (
-            <motion.div layout transition={{ duration: 0.2 }}>
-              <Lottie animationData={spinner} className="w-12 h-12" />
-            </motion.div>
+            <Lottie animationData={spinner} className="w-12 h-12" />
           ) : (
-            <p className="inline h-12">Send</p>
+            <p className="inline h-12">
+              {sending === 0 ? 'Success! Message received' : 'Send'}
+            </p>
           )}
         </PrimaryButton>
       </div>

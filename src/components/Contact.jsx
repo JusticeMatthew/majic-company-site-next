@@ -7,8 +7,13 @@ import ContactForm from './ContactForm';
 const Contact = ({ setInView }) => {
   const { ref, inView } = useInView({ threshold: 0.9 });
   const [switchToggled, setSwitchToggled] = useState(false);
+  const [morphing, setMorphing] = useState(false);
 
-  const toggleSwitch = () => setSwitchToggled(!switchToggled);
+  const toggleSwitch = () => {
+    setMorphing(true);
+    setSwitchToggled(!switchToggled);
+    setTimeout(() => setMorphing(false), 540);
+  };
 
   const handleLeftTextClick = () => setSwitchToggled(false);
   const handleRightTextClick = () => setSwitchToggled(true);
@@ -25,10 +30,11 @@ const Contact = ({ setInView }) => {
         Ready to see what Majic can do for&nbsp;
         <span className="text-gradient">your</span>&nbsp;business?
       </h4>
-      <p className="text-seasalt/75 max-w-[60ch] text-center text-lg mb-16">
+      <p className="text-seasalt/75 max-w-[60ch] text-center text-lg mb-24">
         Connect with us through a message or video call and let Majic illuminate
         the path to online greatness and amaze your audience with every click.
       </p>
+
       <div className="flex items-center justify-center gap-8 mb-8 text-seasalt">
         <p
           onClick={handleLeftTextClick}
@@ -64,13 +70,57 @@ const Contact = ({ setInView }) => {
         </p>
       </div>
       <div className="flex flex-col w-full p-24 min-h-20 bg-seasalt rounded-2xl max-sg:items-center justify-evenly">
-        <div className="mb-20">
-          <h5 className="mb-8 text-5xl font-calistoga">Send us a message</h5>
-          <p className="max-w-[65ch] text-lg">
-            Have questions? Need more information? We would love to hear about
-            your business! Reach out today and you&apos;ll hear from us within
-            48 hours.
-          </p>
+        {morphing && (
+          <svg id="filters" className="hidden">
+            <defs>
+              <filter id="threshold">
+                <feColorMatrix
+                  in="SourceGraphic"
+                  type="matrix"
+                  values="1 0 0 0 0
+									0 1 0 0 0
+									0 0 1 0 0
+									0 0 400 255 -140"
+                />
+              </filter>
+            </defs>
+          </svg>
+        )}
+        <div id="contactSectionMorphedText" className="relative mb-24">
+          <div className="absolute">
+            <motion.h4
+              className={`${
+                switchToggled ? 'blur-0' : 'blur-lg opacity-0'
+              } mb-8 text-5xl font-calistoga transition-all duration-700`}
+            >
+              Schedule a video call
+            </motion.h4>
+            <motion.p
+              className={`${
+                switchToggled ? 'blur-0' : 'blur-sm opacity-0'
+              } max-w-[65ch] text-lg transition-all duration-700`}
+            >
+              Set up a video conference to show us your vision and we’ll
+              customize our web design solutions to fit your needs perfectly.
+            </motion.p>
+          </div>
+          <div>
+            <motion.h4
+              className={`${
+                !switchToggled ? 'blur-0' : 'blur-lg opacity-0'
+              } mb-8 text-5xl font-calistoga transition-all duration-700`}
+            >
+              Send us a message
+            </motion.h4>
+            <motion.p
+              className={`${
+                !switchToggled ? 'blur-0' : 'blur-sm opacity-0'
+              } max-w-[65ch] text-lg transition-all duration-700`}
+            >
+              Have questions? Need more information? We would love to hear about
+              your business! Reach out today and we’ll respond within 48 hours.
+            </motion.p>
+          </div>
         </div>
         <ContactForm />
       </div>
