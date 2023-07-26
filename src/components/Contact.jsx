@@ -26,11 +26,11 @@ const Contact = ({ setInView }) => {
       id="contact"
       className="relative flex flex-col items-center justify-center w-full min-h-screen text-text"
     >
-      <h4 className="mb-8 text-6xl font-calistoga text-seasalt">
+      <h4 className="mt-24 mb-8 text-6xl font-calistoga text-seasalt">
         Ready to see what Majic can do for&nbsp;
         <span className="text-gradient">your</span>&nbsp;business?
       </h4>
-      <p className="text-seasalt/75 max-w-[60ch] text-center text-lg mb-24">
+      <p className="text-seasalt/75 max-w-[60ch] text-center text-lg mb-32">
         Connect with us through a message or video call and let Majic illuminate
         the path to online greatness and amaze your audience with every click.
       </p>
