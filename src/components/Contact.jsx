@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { InlineWidget } from 'react-calendly';
 import { useInView } from 'react-intersection-observer';
 import ContactForm from './ContactForm';
 
@@ -82,7 +83,10 @@ const Contact = ({ setInView }) => {
           Schedule video call
         </p>
       </div>
-      <div className="flex flex-col w-full p-24 min-h-20 bg-seasalt rounded-2xl max-sg:items-center justify-evenly">
+      <motion.div
+        layout
+        className="flex flex-col w-full p-24 overflow-x-hidden min-h-20 bg-seasalt rounded-2xl max-sg:items-center justify-evenly"
+      >
         {morphing && (
           <svg id="filters" className="hidden">
             <defs>
@@ -99,7 +103,7 @@ const Contact = ({ setInView }) => {
             </defs>
           </svg>
         )}
-        <div id="contactSectionMorphedText" className="relative mb-24">
+        <div id="contactSectionMorphedText" className="relative mb-16">
           <div className="absolute">
             <motion.h4
               className={`${
@@ -135,8 +139,24 @@ const Contact = ({ setInView }) => {
             </motion.p>
           </div>
         </div>
-        <ContactForm />
-      </div>
+        <div
+          className={`${
+            switchToggled ? 'hidden' : 'inline'
+          } animate-in animate-out slide-in-from-right slide-out-to-right duration-200`}
+        >
+          <ContactForm />
+        </div>
+        <div
+          className={`${
+            switchToggled ? 'inline' : 'hidden'
+          } animate-in animate-out slide-in-from-left slide-out-to-left duration-200`}
+        >
+          <InlineWidget
+            url="https://calendly.com/majicwebdesign/meeting"
+            styles={{ height: '500px', overflow: 'hidden' }}
+          />
+        </div>
+      </motion.div>
       {/*BG items*/}
       <motion.div
         animate={{

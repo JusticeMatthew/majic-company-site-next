@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Inter, Calistoga } from 'next/font/google';
 import { Lenis as ReactLenis } from '@studio-freight/react-lenis';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
-import ToastProvider from '@/providers/ToastProvider';
 import { useInView } from 'react-intersection-observer';
 import {
   Header,
@@ -95,9 +94,7 @@ export default function Home() {
             <ScrollingWords />
             <Examples setInView={setExamplesInView} bgDark={bgDark} />
             <Services setInView={setServicesInView} />
-            <ToastProvider>
-              <Contact setInView={setContactInView} />
-            </ToastProvider>
+            <Contact setInView={setContactInView} />
             <Footer />
           </div>
         </div>

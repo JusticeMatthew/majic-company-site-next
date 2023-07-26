@@ -4,19 +4,19 @@ import { motion } from 'framer-motion';
 const PrimaryButton = ({ children, className, disabled, ...props }) => {
   return (
     <motion.button
-      layout
+      layout={'size'}
       disabled={disabled}
       transition={{ duration: 0.2 }}
       className="relative p-1 text-lg font-medium tracking-wide rounded-full bg-primary-gradient text-seasalt group disabled:opacity-50 disabled:pointer-events-none"
       {...props}
     >
       <motion.div
-        layout
+        layout={'size'}
         transition={{ duration: 0.2 }}
         className="absolute w-full h-full rounded-full bg-primary-gradient -inset-[2px] group-hover:blur z-10"
       />
       <motion.span
-        layout
+        layout={'size'}
         transition={{ duration: 0.2 }}
         className={`${className} relative z-20 block rounded-full group-hover:bg-text`}
       >
