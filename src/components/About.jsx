@@ -18,25 +18,25 @@ const About = ({ setInView }) => {
     >
       <div
         ref={ref}
-        className="grid justify-center w-full grid-cols-3 gap-4 md:gap-8"
+        className="grid justify-center w-full grid-cols-3 gap-4 mg:gap-8"
       >
-        <div className="col-span-3 bg-seasalt h-[40rem] rounded-2xl flex items-center justify-evenly shadow">
+        <div className="col-span-3 bg-seasalt max-h-[40rem] rounded-2xl flex items-center justify-evenly shadow py-4">
           <Lottie
             animationData={workingV2}
-            className="w-[38rem] h-[38rem] hidden md:inline max-mg:p-6 mx-16"
+            className="max-w-[38rem] max-h-[38rem] hidden md:inline p-4 mx-4 mg:mx-16"
           />
           <div className="flex flex-col p-8 max-md:items-center max-md:justify-center max-md:text-center">
             <p className="text-4xl mg:text-6xl font-calistoga w-[12ch] mb-8">
               Running your own business is
               <span className="text-gradient"> tough enough</span>
             </p>
-            <p className="mb-16 w-[25ch] sm:w-[30ch] mg:w-[40ch] mg:text-xl">
+            <p className="mb-8 mg:mb-16 w-[25ch] sm:w-[30ch] mg:w-[40ch] mg:text-xl">
               Thats why Majic wants to provide a one stop shop for businesses
               who need worry-free web design & development services at a fair
               rate.
             </p>
             <ScrollLink to="services" offset={-600}>
-              <PrimaryButton className="sm:w-[17rem] mg:w-[21rem] w-60 px-3 sm:px-12 py-3 max-sm:text-sm">
+              <PrimaryButton className="sm:w-[17rem] mg:w-[21rem] w-60 px-3 py-4 max-sm:text-sm">
                 See our affordable plans
               </PrimaryButton>
             </ScrollLink>

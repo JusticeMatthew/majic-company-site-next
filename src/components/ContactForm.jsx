@@ -52,7 +52,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit(sendEmail)}
       className="flex flex-col w-full text-text"
     >
-      <div className="flex flex-row w-full gap-24 h-96">
+      <div className="flex flex-col w-full sg:gap-16 mg:gap-24 sg:flex-row min-h-96">
         <div className="w-full">
           <div className="mb-4">
             <label htmlFor="name" className="ml-5 text-lg font-semibold">
@@ -117,7 +117,7 @@ const ContactForm = () => {
             </div>
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full mt-4 sg:mt-0">
           <label
             htmlFor="Message"
             className="block mb-2 ml-5 text-lg font-semibold"
@@ -128,7 +128,7 @@ const ContactForm = () => {
             id="message"
             type="textarea"
             {...register('message')}
-            className={`resize-none w-full h-[83%] p-5 rounded-2xl bg-slate-200 focus:outline-none ${
+            className={`resize-none w-full h-60 sg:h-80 p-5 rounded-2xl bg-slate-200 focus:outline-none ${
               errors.message
                 ? 'focus-within:ring-4 ring-4 ring-red-700'
                 : 'hover:ring-4 focus-within:ring-4 ring-blurple'

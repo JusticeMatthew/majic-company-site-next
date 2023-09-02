@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Lottie from 'lottie-react';
 import { useInView } from 'react-intersection-observer';
+import { CombinedServices } from '.';
 import pricingPlans from '@/constants/pricingPlans';
 
 const Services = ({ setInView }) => {
@@ -26,7 +27,8 @@ const Services = ({ setInView }) => {
             affordable price. Everything you need to thrive online.
           </p>
           <p className="mt-8 font-bold">We take care of it.</p>
-          <div className="grid grid-cols-3 gap-8 mt-16">
+          <CombinedServices />
+          <div className="hidden grid-cols-3 gap-8 mt-16 mg:grid">
             {pricingPlans.map((plan) => (
               <div
                 key={plan.name}

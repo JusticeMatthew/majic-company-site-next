@@ -36,11 +36,11 @@ const Landing = () => {
         transition={{ delay: 1, duration: 1 }}
         className="flex flex-col items-center justify-center"
       >
-        <h2 className="mt-32 mb-8 text-4xl sm:text-6xl md:text-8xl font-calistoga">
+        <h2 className="mt-32 mb-8 text-4xl max-sm:font-bold max-sm:tracking-wide sm:text-6xl md:text-7xl mg:text-8xl font-calistoga">
           We build beautiful websites for great businesses like&nbsp;
           <span className="text-gradient">yours</span>
         </h2>
-        <p className="mb-16 md:text-xl max-w-[65ch]">
+        <p className="mb-16 md:text-lg mg:text-xl max-w-[65ch]">
           We help local businesses find new customers online and grow their
           digital presence through stand-out websites & videos. With our
           affordable plans and enchanting design we&apos;ll create a captivating
@@ -48,12 +48,14 @@ const Landing = () => {
         </p>
         <div className="flex flex-col gap-6 mb-16">
           <ScrollLink to="contact">
-            <PrimaryButton className="px-12 py-3">
+            <PrimaryButton className="px-12 py-3 max-sm:text-sm">
               Connect with us today
             </PrimaryButton>
           </ScrollLink>
           <ScrollLink to="about" offset={-100}>
-            <SecondaryButton className="">More about Majic</SecondaryButton>
+            <SecondaryButton className="max-sm:text-sm">
+              More about Majic
+            </SecondaryButton>
           </ScrollLink>
         </div>
       </motion.div>

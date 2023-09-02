@@ -85,7 +85,7 @@ const Contact = ({ setInView }) => {
       </div> */}
       <motion.div
         layout
-        className="flex flex-col w-full px-24 py-16 overflow-x-hidden min-h-20 bg-seasalt rounded-2xl max-sg:items-center justify-evenly"
+        className="flex flex-col w-full p-16 overflow-x-hidden mg:px-24 min-h-20 bg-seasalt rounded-2xl max-sg:items-center justify-evenly"
       >
         {/* {morphing && (
           <svg id="filters" className="hidden">
@@ -139,18 +139,18 @@ const Contact = ({ setInView }) => {
             </motion.p>
           </div>
         </div>
-        <div
+        {/* <div
           className={`${
             switchToggled ? 'hidden' : 'inline'
           } animate-in fade-in fade-out duration-400`}
-        >
-          <ContactForm />
-        </div>
-        <div
+        > */}
+        <ContactForm />
+        {/* </div> */}
+        {/* <div
           className={`${
             switchToggled ? 'inline' : 'hidden'
           } animate-in fade-in fade-out duration-400`}
-        ></div>
+        ></div> */}
       </motion.div>
       <div className="mt-4">
         <p className="inline text-center text-seasalt text-md">

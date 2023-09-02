@@ -10,3 +10,4 @@ export { default as Contact } from './Contact';
 export { default as Footer } from './Footer';
 export { default as MobileNav } from './MobileNav';
 export { default as MagicParticles } from './MagicParticles';
+export { default as CombinedServices } from './CombinedServices';
