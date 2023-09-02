@@ -20,10 +20,10 @@ const About = ({ setInView }) => {
         ref={ref}
         className="grid justify-center w-full grid-cols-3 gap-4 mg:gap-8"
       >
-        <div className="col-span-3 bg-seasalt max-h-[40rem] rounded-2xl flex items-center justify-evenly shadow py-4">
+        <div className="col-span-3 bg-seasalt max-h-[40rem] rounded-2xl flex items-center justify-evenly shadow py-4 md:py-16">
           <Lottie
             animationData={workingV2}
-            className="max-w-[38rem] max-h-[38rem] hidden md:inline p-4 mx-4 mg:mx-16"
+            className="max-w-[36rem] max-h-[36rem] hidden md:inline p-4 mx-4 mg:mx-16"
           />
           <div className="flex flex-col p-8 max-md:items-center max-md:justify-center max-md:text-center">
             <p className="text-4xl mg:text-6xl font-calistoga w-[12ch] mb-8">
