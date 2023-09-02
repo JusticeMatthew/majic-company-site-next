@@ -6,7 +6,7 @@ import { CombinedServices } from '.';
 import pricingPlans from '@/constants/pricingPlans';
 
 const Services = ({ setInView }) => {
-  const { ref, inView } = useInView({ rootMargin: '0px 0px -40%' });
+  const { ref, inView } = useInView({ rootMargin: '-10% 0px -50%' });
 
   useEffect(() => setInView(inView), [setInView, inView]);
 

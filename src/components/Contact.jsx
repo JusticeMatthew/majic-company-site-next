@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import ContactForm from './ContactForm';
 
 const Contact = ({ setInView }) => {
-  const { ref, inView } = useInView({ threshold: 0.9 });
+  const { ref, inView } = useInView({ rootMargin: '0px 0px -85%' });
   const [switchToggled, setSwitchToggled] = useState(false);
   // const [morphing, setMorphing] = useState(false);
 

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const Examples = ({ setInView, bgDark }) => {
-  const { ref, inView } = useInView({ threshold: 0.6 });
+  const { ref, inView } = useInView({ threshold: 0.7 });
 
   useEffect(() => setInView(inView), [setInView, inView]);
 
