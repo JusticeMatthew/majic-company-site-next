@@ -14,6 +14,7 @@ html {
 }
 
 body {
+  color: #0d111c;
   overflow-x: hidden;
   background-image: linear-gradient(
     to right,
@@ -31,8 +32,9 @@ body {
   transition-duration: 300ms !important;
 }
 
+/* 100rem */
 .main-container {
-  width: min(75rem, 100%);
+  width: min(87.5rem, 100%);
 }
 
 html.lenis {
@@ -53,4 +55,8 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+#contactSectionMorphedText {
+  filter: url('#threshold');
 }

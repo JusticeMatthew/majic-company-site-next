@@ -9,14 +9,14 @@ const ScrollingWords = () => {
   return (
     <div
       id="scrolling-words"
-      className="flex flex-row my-4 pointer-events-none"
+      className="flex flex-row min-h-[16rem] sm:min-h-[24rem] pointer-events-none"
     >
       <motion.p
         style={{ x: x }}
         transition={{
           duration: 2,
         }}
-        className="flex items-center my-8 overflow-visible uppercase text-7xl text-gradient font-calistoga sm:text-9xl mg:my-0"
+        className="flex items-center overflow-visible uppercase text-7xl text-gradient font-calistoga sm:text-9xl mg:my-0"
       >
         {['pocus', 'lumos', 'abracadabra', 'presto', 'alakazam', 'hocus'].map(
           (item, idx) => (

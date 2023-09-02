@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Inter, Calistoga } from 'next/font/google';
 import { Lenis as ReactLenis } from '@studio-freight/react-lenis';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
-import ToastProvider from '@/providers/ToastProvider';
 import { useInView } from 'react-intersection-observer';
 import {
   Header,
@@ -30,15 +29,17 @@ const calistoga = Calistoga({
 export default function Home() {
   const { scrollY } = useScroll();
   const [pos, setPos] = useState(0);
+  const [bgDark, setBgDark] = useState(false);
   const [aboutInView, setAboutInView] = useState();
   const [examplesInView, setExamplesInView] = useState();
   const [servicesInView, setServicesInView] = useState();
   const [contactInView, setContactInView] = useState();
-  const { ref: bgRef, inView: bgInView } = useInView({ threshold: 0.19 });
+  const { ref: bgRef, inView: bgInView } = useInView({ threshold: 0.1 });
 
   useEffect(() => {
     const body = document.body;
     if (!bgInView) {
+      setBgDark(false);
       body.style.backgroundColor = '#F8FAFC';
       body.style.backgroundImage = `linear-gradient(
         to right,
@@ -53,6 +54,7 @@ export default function Home() {
     }
 
     if (bgInView) {
+      setBgDark(true);
       body.style.backgroundColor = '#0B112B';
       body.style.backgroundImage = `url("/images/dark-bg-texture.svg")`;
       body.style.backgroundImage = `linear-gradient(
@@ -90,11 +92,9 @@ export default function Home() {
           <About setInView={setAboutInView} />
           <div ref={bgRef}>
             <ScrollingWords />
-            <Examples setInView={setExamplesInView} />
+            <Examples setInView={setExamplesInView} bgDark={bgDark} />
             <Services setInView={setServicesInView} />
-            <ToastProvider>
-              <Contact setInView={setContactInView} />
-            </ToastProvider>
+            <Contact setInView={setContactInView} />
             <Footer />
           </div>
         </div>

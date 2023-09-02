@@ -1,60 +1,83 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import Lottie from 'lottie-react';
 import { useInView } from 'react-intersection-observer';
-import services from '@/constants/services';
+import { CombinedServices } from '.';
+import pricingPlans from '@/constants/pricingPlans';
 
 const Services = ({ setInView }) => {
-  const { ref, inView } = useInView({ threshold: 0.9 });
+  const { ref, inView } = useInView({ rootMargin: '0px 0px -40%' });
+
   useEffect(() => setInView(inView), [setInView, inView]);
 
   return (
     <section
       ref={ref}
       id="services"
-      className="relative flex w-full h-[min(auto, 60vh)] my-16 items-center text-seasalt max-sm:my-16 max-sm:text-sm md:px-6"
+      className={`relative flex w-full h-[min(auto, 60vh)] my-16 items-center text-seasalt max-sm:text-sm ${
+        inView ? 'opacity-100' : 'opacity-0'
+      } transition-opacity duration-200`}
     >
-      <motion.div
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-col w-full gap-8"
-      >
-        <h4 className="text-5xl tracking-wide font-calistoga">What we offer</h4>
-        <div className="flex flex-col justify-between w-auto mg:w-full mg:flex-row max-mg:gap-10">
-          <div>
-            <p className="w-80 text-seasalt/75">
-              You have a business to run. That’s why we go above and beyond to
-              provide the most complete digital service to our clients. From
-              your own domain and hosting, to web design and email support.
-            </p>
-            <p className="mt-8 font-bold">We take care of it.</p>
-          </div>
-          <motion.div className="grid grid-cols-1 grid-rows-5 gap-4 sm:grid-cols-2">
-            {services.map((item, idx) => (
-              <motion.div
-                whileInView={{ opacity: 1 }}
-                initial={{ opacity: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
-                key={idx}
-                className={`${
-                  item.offset ? 'mg:-translate-x-20' : ''
-                } items-center gap-5 flex px-6 py-4 rounded-full bg-primary-gradient sm:max-md:text-sm ${
-                  idx > 6 ? 'hidden sm:flex' : ''
+      <div className="flex flex-col w-full gap-8">
+        <h4 className="text-6xl tracking-wide font-calistoga">What we offer</h4>
+        <div className="flex flex-col justify-between w-auto mg:w-full max-mg:gap-10 mg:text-lg">
+          <p className="max-w-[75ch] text-seasalt/75">
+            You have a business to run. That’s why we go above and beyond to
+            provide the most complete digital service to our clients at an
+            affordable price. Everything you need to thrive online.
+          </p>
+          <p className="font-bold sm:mt-8">We take care of it.</p>
+          <CombinedServices />
+          <div className="hidden grid-cols-3 gap-8 mt-16 mg:grid">
+            {pricingPlans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`flex flex-col justify-between h-auto py-16 shadow bg-seasalt rounded-2xl text-text relative ${
+                  plan.recommended ? 'ring-[3px] ring-blurple' : ''
                 }`}
               >
-                <Image
-                  src="/images/circle-check-icon.svg"
-                  alt="checkmark"
-                  width={32}
-                  height={32}
-                />
-                <p>{item.service}</p>
-              </motion.div>
+                {plan.recommended && (
+                  <div className="absolute left-0 flex justify-center w-full text-center -top-4 text-seasalt">
+                    <p className="px-20 py-1 font-medium rounded-full w-fit bg-primary-gradient">
+                      Recommended
+                    </p>
+                  </div>
+                )}
+                <div>
+                  <Lottie
+                    animationData={plan.lottie}
+                    className="w-[16rem] h-[16rem] mx-auto"
+                  />
+                  <h4 className="w-full mt-8 text-4xl text-center font-calistoga">
+                    {plan.name}
+                  </h4>
+                  <div className="px-12 mt-8 mb-16">
+                    {plan.services.map((service) => (
+                      <div key={service} className="flex mb-6">
+                        <Image
+                          src="/images/check-icon.svg"
+                          alt="checkmark"
+                          width={20}
+                          height={20}
+                        />
+                        <p className="inline ml-6">{service}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="w-full text-3xl text-center font-calistoga">
+                    {plan.price}
+                  </p>
+                  <p className="w-full mt-3 text-sm text-center">
+                    {plan.monthly}
+                  </p>
+                </div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

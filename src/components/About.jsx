@@ -3,8 +3,9 @@ import Image from 'next/image';
 import Lottie from 'lottie-react';
 import { useInView } from 'react-intersection-observer';
 import benefits from '@/constants/benefits';
-import { MiniLogoSparkles, Button, ScrollLink } from '@/components';
-import working from '@/working.json';
+import { MiniLogoSparkles, ScrollLink } from '@/components';
+import { PrimaryButton } from '@/components/Button';
+import workingV2 from '@/workingV2.json';
 
 const About = ({ setInView }) => {
   const { ref, inView } = useInView({ threshold: 0.3 });
@@ -17,47 +18,47 @@ const About = ({ setInView }) => {
     >
       <div
         ref={ref}
-        className="grid justify-center w-full grid-cols-3 gap-10 max-md:gap-4"
+        className="grid justify-center w-full grid-cols-3 gap-4 mg:gap-8"
       >
-        <div className="col-span-3 bg-seasalt h-[30rem] rounded-2xl flex items-center justify-evenly shadow">
+        <div className="col-span-3 bg-seasalt max-h-[40rem] rounded-2xl flex items-center justify-evenly shadow py-4">
           <Lottie
-            animationData={working}
-            className="w-[28rem] h-[28rem] hidden md:inline max-mg:p-6"
+            animationData={workingV2}
+            className="max-w-[38rem] max-h-[38rem] hidden md:inline p-4 mx-4 mg:mx-16"
           />
-          <div className="md:max-mg:w-[18rem] max-sm:w-[18rem] w-[22rem] mx-6 flex flex-col gap-5 max-md:items-center max-md:justify-center max-md:text-center">
-            <p className="text-5xl md:max-mg:text-4xl max-sm:text-4xl font-calistoga">
+          <div className="flex flex-col p-8 max-md:items-center max-md:justify-center max-md:text-center">
+            <p className="text-4xl mg:text-6xl font-calistoga w-[12ch] mb-8">
               Running your own business is
               <span className="text-gradient"> tough enough</span>
             </p>
-            <p className="mb-3 max-sm:w-60 w-80 md:max-mg:w-60">
+            <p className="mb-8 mg:mb-16 w-[25ch] sm:w-[30ch] mg:w-[40ch] mg:text-xl">
               Thats why Majic wants to provide a one stop shop for businesses
               who need worry-free web design & development services at a fair
               rate.
             </p>
-            <ScrollLink to="contact">
-              <Button className="md:max-mg:w-[17rem] w-[21rem] max-sm:w-60">
-                Get a free quote
-              </Button>
+            <ScrollLink to="services" offset={-600}>
+              <PrimaryButton className="sm:w-[17rem] mg:w-[21rem] w-60 px-3 py-4 max-sm:text-sm">
+                See our affordable plans
+              </PrimaryButton>
             </ScrollLink>
           </div>
         </div>
         {benefits.map((item, idx) => (
           <div
             key={idx}
-            className="flex max-md:flex-row flex-col items-center justify-center max-md:justify-between max-sm:justify-center p-14 md:max-mg:p-6 bg-seasalt rounded-2xl h-[30rem] md:max-mg:h-[28rem] relative group shadow max-md:col-span-3 max-md:h-48 max-sm:p-8"
+            className="flex max-md:flex-row flex-col items-center justify-center max-md:justify-between p-14 md:max-mg:p-6 bg-seasalt rounded-2xl h-[40rem] md:max-mg:h-[28rem] relative group shadow max-md:col-span-3 max-md:h-48 max-sm:p-8"
           >
             <MiniLogoSparkles className="invisible -top-5 -left-4 group-hover:visible" />
             <MiniLogoSparkles className="invisible -bottom-5 -right-5 group-hover:visible" />
-            <div className="relative h-24 w-60 max-mg:h-18 max-mg:w-20 max-md:mr-6 max-sm:hidden">
+            <div className="relative h-32 w-80 max-mg:h-18 max-mg:w-24 max-md:mr-6 max-sm:hidden">
               <Image src={item.icon} alt={item.alt} fill />
             </div>
             <div>
-              <p className="mt-10 mb-6 text-4xl md:text-center max-md:mb-2 max-mg:text-3xl text-text font-calistoga max-md:text-2xl">
+              <p className="mt-10 mb-4 text-5xl text-center sm:mt-4 mg:mb-14 mg:mt-14 max-mg:text-3xl text-text font-calistoga max-md:text-2xl">
                 <span className="text-gradient">{item.topText} </span>
                 <br className="max-md:hidden" />
                 <span className="whitespace-nowrap">{item.bottomText}</span>
               </p>
-              <p className="h-24 md:text-center text-text max-mg:text-sm max-md:w-96 max-sm:w-72">
+              <p className="h-24 text-xl text-center text-text max-mg:text-sm max-md:w-96 max-sm:w-72">
                 {item.content}
               </p>
             </div>

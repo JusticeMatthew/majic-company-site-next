@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import Lottie from 'lottie-react';
-import scrollDown from '@/scrollDown.json';
-import { Button, MagicParticles, ScrollLink } from '@/components';
+import { MagicParticles, ScrollLink } from '@/components';
+import { PrimaryButton, SecondaryButton } from '@/components/Button';
 
 const Landing = () => {
   const [particlesVisible, setParticlesVisible] = useState(true);
@@ -37,25 +36,28 @@ const Landing = () => {
         transition={{ delay: 1, duration: 1 }}
         className="flex flex-col items-center justify-center"
       >
-        <h2 className="mt-32 mb-8 text-4xl sm:text-6xl md:text-7xl font-calistoga">
+        <h2 className="mt-32 mb-8 text-4xl max-sm:font-semibold max-sm:tracking-wide sm:text-6xl md:text-7xl mg:text-8xl font-calistoga">
           We build beautiful websites for great businesses like&nbsp;
           <span className="text-gradient">yours</span>
         </h2>
-        <p className="mb-16 md:text-lg max-w-[65ch]">
+        <p className="mb-16 md:text-lg mg:text-xl max-w-[65ch]">
           We help local businesses find new customers online and grow their
-          digital presence through stand-out websites & videos. Reach out today
-          and get a free quote.
+          digital presence through stand-out websites & videos. With our
+          affordable plans and enchanting design we&apos;ll create a captivating
+          experience for your audience.
         </p>
-        <ScrollLink to="contact" className="mb-16">
-          <Button>Get a free quote</Button>
-        </ScrollLink>
-        <ScrollLink
-          alt="scroll down indicator"
-          to="about"
-          className="flex items-center justify-center w-8 h-10 rounded-full bg-primary-gradient"
-        >
-          <Lottie animationData={scrollDown} className="w-8 h-12" />
-        </ScrollLink>
+        <div className="flex flex-col gap-6 mb-16">
+          <ScrollLink to="contact">
+            <PrimaryButton className="px-12 py-3 max-sm:text-sm">
+              Connect with us today
+            </PrimaryButton>
+          </ScrollLink>
+          <ScrollLink to="about" offset={-100}>
+            <SecondaryButton className="max-sm:text-sm">
+              More about Majic
+            </SecondaryButton>
+          </ScrollLink>
+        </div>
       </motion.div>
       {/*BG items*/}
       <motion.div
