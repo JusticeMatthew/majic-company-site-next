@@ -51,7 +51,7 @@ const Examples = ({ setInView, bgDark }) => {
             them we wanted something simple and informative and they delivered
             better than we expected. We would highly recommend Majic for website
             design, especially for companies looking for someone with a creative
-            eye.
+            eye and affordable pricing.
           </p>
           <p className="mt-8 mb-16 text-lg">
             Garry & JJ Reese

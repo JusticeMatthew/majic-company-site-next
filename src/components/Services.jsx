@@ -29,7 +29,7 @@ const Services = ({ setInView }) => {
           <div className="grid grid-cols-3 gap-8 mt-16">
             {pricingPlans.map((plan) => (
               <div
-                key={plan}
+                key={plan.name}
                 className={`flex flex-col justify-between h-auto py-16 shadow bg-seasalt rounded-2xl text-text relative ${
                   plan.recommended ? 'ring-[3px] ring-blurple' : ''
                 }`}
@@ -58,7 +58,7 @@ const Services = ({ setInView }) => {
                           width={20}
                           height={20}
                         />
-                        <p className="inline ml-8">{service}</p>
+                        <p className="inline ml-6">{service}</p>
                       </div>
                     ))}
                   </div>

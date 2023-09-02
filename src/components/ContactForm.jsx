@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
 import emailjs from '@emailjs/browser';
 import { useForm } from 'react-hook-form';
@@ -146,7 +145,7 @@ const ContactForm = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-center w-full mt-8">
+      <div className="flex justify-center w-full mt-16">
         <PrimaryButton
           type="submit"
           disabled={
