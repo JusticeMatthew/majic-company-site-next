@@ -45,7 +45,7 @@ const About = ({ setInView }) => {
         {benefits.map((item, idx) => (
           <div
             key={idx}
-            className="flex max-md:flex-row flex-col items-center justify-center max-md:justify-between max-sm:justify-center p-14 md:max-mg:p-6 bg-seasalt rounded-2xl h-[40rem] md:max-mg:h-[28rem] relative group shadow max-md:col-span-3 max-md:h-48 max-sm:p-8"
+            className="flex max-md:flex-row flex-col items-center justify-center max-md:justify-between p-14 md:max-mg:p-6 bg-seasalt rounded-2xl h-[40rem] md:max-mg:h-[28rem] relative group shadow max-md:col-span-3 max-md:h-48 max-sm:p-8"
           >
             <MiniLogoSparkles className="invisible -top-5 -left-4 group-hover:visible" />
             <MiniLogoSparkles className="invisible -bottom-5 -right-5 group-hover:visible" />
@@ -53,12 +53,12 @@ const About = ({ setInView }) => {
               <Image src={item.icon} alt={item.alt} fill />
             </div>
             <div>
-              <p className="mt-10 mb-4 text-5xl sm:mt-4 mg:mb-14 mg:mt-14 md:text-center max-mg:text-3xl text-text font-calistoga max-md:text-2xl">
+              <p className="mt-10 mb-4 text-5xl text-center sm:mt-4 mg:mb-14 mg:mt-14 max-mg:text-3xl text-text font-calistoga max-md:text-2xl">
                 <span className="text-gradient">{item.topText} </span>
                 <br className="max-md:hidden" />
                 <span className="whitespace-nowrap">{item.bottomText}</span>
               </p>
-              <p className="h-24 text-xl md:text-center text-text max-mg:text-sm max-md:w-96 max-sm:w-72">
+              <p className="h-24 text-xl text-center text-text max-mg:text-sm max-md:w-96 max-sm:w-72">
                 {item.content}
               </p>
             </div>

@@ -52,7 +52,7 @@ const CombinedServices = () => {
           <h4 className="w-full mt-8 text-4xl text-center font-calistoga">
             {activePlan.name}
           </h4>
-          <div className="px-12 mt-8 mb-16">
+          <div className="px-8 mt-8 mb-16 sm:px-12">
             {activePlan.services.map((service) => (
               <div key={service} className="flex mb-6">
                 <Image

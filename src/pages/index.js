@@ -34,7 +34,7 @@ export default function Home() {
   const [examplesInView, setExamplesInView] = useState();
   const [servicesInView, setServicesInView] = useState();
   const [contactInView, setContactInView] = useState();
-  const { ref: bgRef, inView: bgInView } = useInView({ threshold: 0.19 });
+  const { ref: bgRef, inView: bgInView } = useInView({ threshold: 0.1 });
 
   useEffect(() => {
     const body = document.body;

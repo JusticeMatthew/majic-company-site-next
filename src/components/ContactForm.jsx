@@ -18,6 +18,19 @@ const ContactForm = () => {
   } = useForm({ resolver: zodResolver(contactFormValidator) });
   const [sending, setSending] = useState(false);
 
+  // Styles
+  const { label, input, container, textarea } = {
+    label: 'text-lg font-semibold',
+    input: `mt-2 w-full h-12 sm:h-14 p-3 rounded-2xl bg-slate-200 focus:outline-none`,
+    container: 'mb-4 h-28',
+    textarea: `resize-none w-full h-60 sg:h-80 p-3 rounded-2xl bg-slate-200 focus:outline-none mt-2 ${
+      errors.message
+        ? 'focus-within:ring-4 ring-4 ring-red-700'
+        : 'hover:ring-4 focus-within:ring-4 ring-blurple'
+    }`,
+  };
+  // Styles End
+
   const sendEmail = async ({ name, email, company, message }) => {
     try {
       setSending(true);
@@ -54,8 +67,8 @@ const ContactForm = () => {
     >
       <div className="flex flex-col w-full sg:gap-16 mg:gap-24 sg:flex-row min-h-96">
         <div className="w-full">
-          <div className="mb-4">
-            <label htmlFor="name" className="ml-5 text-lg font-semibold">
+          <div className={container}>
+            <label htmlFor="name" className={label}>
               Name
             </label>
 
@@ -63,7 +76,7 @@ const ContactForm = () => {
               id="name"
               type="text"
               {...register('name')}
-              className={`mt-2 w-full h-14 p-5 rounded-2xl bg-slate-200 focus:outline-none ${
+              className={`${input} ${
                 errors.name
                   ? 'focus-within:ring-4 ring-4 ring-red-700'
                   : 'hover:ring-4 focus-within:ring-4 ring-blurple'
@@ -72,22 +85,22 @@ const ContactForm = () => {
             <p
               className={
                 errors.name
-                  ? 'text-red-500 text-xs ml-5 visible h-5 mt-2'
+                  ? 'text-red-500 text-xs visible h-5 mt-2'
                   : 'invisible'
               }
             >
               We need to know your name
             </p>
           </div>
-          <div className="mb-4 h-28">
-            <label htmlFor="email" className="ml-5 text-lg font-semibold">
+          <div className={container}>
+            <label htmlFor="email" className={label}>
               Email
             </label>
             <input
               id="email"
               type="email"
               {...register('email')}
-              className={`mt-2 w-full h-14 p-5 rounded-2xl bg-slate-200 focus:outline-none ${
+              className={`${input} ${
                 errors.email
                   ? 'focus-within:ring-4 ring-4 ring-red-700'
                   : 'hover:ring-4 focus-within:ring-4 ring-blurple'
@@ -96,48 +109,39 @@ const ContactForm = () => {
             <p
               className={
                 errors.email
-                  ? 'text-red-500 text-xs ml-5 visible h-5 mt-2'
+                  ? 'text-red-500 text-xs visible h-5 mt-2'
                   : 'invisible'
               }
             >
               We need a valid email
             </p>
           </div>
-          <div className="h-28">
-            <label htmlFor="company" className="ml-5 text-lg font-semibold">
+          <div className={container}>
+            <label htmlFor="company" className={label}>
               Company
             </label>
-            <div className={`flex flex-col w-full p-1 rounded-full`}>
-              <input
-                id="company"
-                type="text"
-                {...register('company')}
-                className="w-full p-5 mt-2 h-14 rounded-2xl bg-slate-200 focus:outline-none hover:ring-4 focus-within:ring-4 ring-blurple"
-              />
-            </div>
+            <input
+              id="company"
+              type="text"
+              {...register('company')}
+              className={`${input} hover:ring-4 focus-within:ring-4 ring-blurple`}
+            />
           </div>
         </div>
-        <div className="w-full mt-4 sg:mt-0">
-          <label
-            htmlFor="Message"
-            className="block mb-2 ml-5 text-lg font-semibold"
-          >
+        <div className="w-full">
+          <label htmlFor="Message" className={label}>
             Message
           </label>
           <textarea
             id="message"
             type="textarea"
             {...register('message')}
-            className={`resize-none w-full h-60 sg:h-80 p-5 rounded-2xl bg-slate-200 focus:outline-none ${
-              errors.message
-                ? 'focus-within:ring-4 ring-4 ring-red-700'
-                : 'hover:ring-4 focus-within:ring-4 ring-blurple'
-            }`}
+            className={textarea}
           />
           <p
             className={
               errors.message
-                ? 'text-red-500 text-xs ml-5 visible h-5 mt-1'
+                ? 'text-red-500 text-xs visible h-5 mt-2'
                 : 'invisible'
             }
           >
@@ -154,7 +158,7 @@ const ContactForm = () => {
           className={`${
             sending
               ? 'px-12 py-3 group-hover:bg-transparent cursor-default'
-              : 'px-40 py-3'
+              : 'px-24 sm:px-40 py-3'
           } ${
             sending === 0
               ? 'group-hover:bg-transparent cursor-default'
@@ -164,7 +168,7 @@ const ContactForm = () => {
           {sending ? (
             <Lottie animationData={spinner} className="w-12 h-12" />
           ) : (
-            <p className="inline h-12">
+            <p className="inline h-12 max-sm:text-sm">
               {sending === 0 ? 'Success! Message received' : 'Send'}
             </p>
           )}

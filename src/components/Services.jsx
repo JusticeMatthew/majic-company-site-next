@@ -26,7 +26,7 @@ const Services = ({ setInView }) => {
             provide the most complete digital service to our clients at an
             affordable price. Everything you need to thrive online.
           </p>
-          <p className="mt-8 font-bold">We take care of it.</p>
+          <p className="font-bold sm:mt-8">We take care of it.</p>
           <CombinedServices />
           <div className="hidden grid-cols-3 gap-8 mt-16 mg:grid">
             {pricingPlans.map((plan) => (

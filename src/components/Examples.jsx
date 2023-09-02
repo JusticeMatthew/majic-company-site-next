@@ -18,14 +18,16 @@ const Examples = ({ setInView, bgDark }) => {
       } transition-opacity duration-200`}
     >
       <h4 className="mb-16 text-6xl font-calistoga">Our latest client</h4>
-      <p className="mb-8 font-medium tracking-wider">B&C Pest Control</p>
+      <p className="mb-8 font-medium tracking-wider max-sm:text-sm">
+        B&C Pest Control
+      </p>
       <div className="relative flex items-start w-full mg:items-center max-mg:flex-col">
         <video
           autoPlay
           playsInline
           loop
           muted
-          className="max-h-[30rem] mg:max-h-[25.4rem] rounded-2xl bg-transparent inline shadow mb-16"
+          className="max-h-[30rem] mg:max-h-[25.4rem] rounded-2xl bg-transparent inline shadow mb-8 sm:mb-16"
         >
           <source src="/videos/bc-example-new.webm" type="video/webm" />
         </video>

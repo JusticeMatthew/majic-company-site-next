@@ -40,11 +40,11 @@ const Contact = ({ setInView }) => {
       id="contact"
       className="relative flex flex-col items-center justify-center w-full min-h-screen text-text"
     >
-      <h4 className="mt-24 mb-8 text-6xl text-center font-calistoga text-seasalt">
+      <h4 className="mt-24 mb-8 text-4xl text-center sm:text-6xl font-calistoga text-seasalt">
         Ready to see what Majic can do for&nbsp;
         <span className="text-gradient">your</span>&nbsp;business?
       </h4>
-      <p className="text-seasalt/75 max-w-[50ch] text-center text-lg mb-32">
+      <p className="text-seasalt/75 max-w-[50ch] text-center sm:text-lg mb-32">
         Connect with us today and let Majic illuminate the path to online
         greatness and amaze your audience with every click.
       </p>
@@ -85,7 +85,7 @@ const Contact = ({ setInView }) => {
       </div> */}
       <motion.div
         layout
-        className="flex flex-col w-full p-16 overflow-x-hidden mg:px-24 min-h-20 bg-seasalt rounded-2xl max-sg:items-center justify-evenly"
+        className="flex flex-col w-full p-16 overflow-x-hidden max-sm:px-8 mg:px-24 min-h-20 bg-seasalt rounded-2xl max-sg:items-center justify-evenly"
       >
         {/* {morphing && (
           <svg id="filters" className="hidden">
@@ -125,14 +125,14 @@ const Contact = ({ setInView }) => {
             <motion.h4
               className={`${
                 !switchToggled ? 'blur-0' : 'blur-lg opacity-0'
-              } mb-8 text-4xl font-calistoga transition-all duration-700`}
+              } mb-8 text-3xl sm:text-4xl font-calistoga transition-all duration-700`}
             >
               Send us a message
             </motion.h4>
             <motion.p
               className={`${
                 !switchToggled ? 'blur-0' : 'blur-sm opacity-0'
-              } max-w-[65ch] text-lg transition-all duration-700`}
+              } max-w-[65ch] sm:text-lg transition-all duration-700`}
             >
               Have questions? Need more information? We would love to hear about
               your business! Reach out today and we’ll respond within 48 hours.
@@ -152,8 +152,8 @@ const Contact = ({ setInView }) => {
           } animate-in fade-in fade-out duration-400`}
         ></div> */}
       </motion.div>
-      <div className="mt-4">
-        <p className="inline text-center text-seasalt text-md">
+      <div className="flex flex-col items-center mt-4 sm:flex-row">
+        <p className="text-center text-seasalt text-md">
           Rather put a face to a name?&nbsp;
         </p>
         <Link
