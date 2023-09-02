@@ -17,7 +17,7 @@ const MiniLogoSparkles = ({ className }) => {
             repeat: Infinity,
           },
         }}
-        className="w-10 h-10"
+        className="relative w-10 h-10"
       >
         <Image
           src="/images/large-logo-star.svg"
