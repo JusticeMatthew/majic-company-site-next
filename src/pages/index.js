@@ -75,7 +75,6 @@ export default function Home() {
       options={{
         smoothWheel: true,
         smoothTouch: false,
-        syncTouch: true,
       }}
     >
       <div className={`${inter.variable} ${calistoga.variable}`}>
