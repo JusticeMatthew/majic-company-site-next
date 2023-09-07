@@ -17,7 +17,9 @@ const Examples = ({ setInView, bgDark }) => {
         bgDark ? 'opacity-100' : 'opacity-0'
       } transition-opacity duration-200`}
     >
-      <h4 className="mb-16 text-6xl font-calistoga">Our latest client</h4>
+      <h4 className="mb-16 text-4xl sm:text-6xl font-calistoga">
+        Our latest client
+      </h4>
       <p className="mb-8 font-medium tracking-wider max-sm:text-sm">
         B&C Pest Control
       </p>
@@ -32,7 +34,7 @@ const Examples = ({ setInView, bgDark }) => {
           <source src="/videos/bc-example-new.webm" type="video/webm" />
         </video>
         <div className="relative mg:ml-24">
-          <h4 className="text-4xl font-calistoga max-w-[25ch]">
+          <h4 className="text-3xl sm:text-4xl font-calistoga max-w-[25ch]">
             A <span className="text-gradient">striking</span> new website for
             Florida&apos;s finest pest control service
           </h4>
