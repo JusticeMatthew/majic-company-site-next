@@ -39,7 +39,7 @@ const Services = ({ setInView }) => {
                 {plan.recommended && (
                   <div className="absolute left-0 flex justify-center w-full text-center -top-4 text-seasalt">
                     <p className="px-20 py-1 font-medium rounded-full w-fit bg-primary-gradient">
-                      Recommended
+                      Most Popular
                     </p>
                   </div>
                 )}
