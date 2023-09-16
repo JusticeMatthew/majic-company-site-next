@@ -19,7 +19,9 @@ const Services = ({ setInView }) => {
       } transition-opacity duration-200`}
     >
       <div className="flex flex-col w-full gap-8">
-        <h4 className="text-6xl tracking-wide font-calistoga">What we offer</h4>
+        <h4 className="text-4xl tracking-wide sm:text-6xl font-calistoga">
+          What we offer
+        </h4>
         <div className="flex flex-col justify-between w-auto mg:w-full max-mg:gap-10 mg:text-lg">
           <p className="max-w-[75ch] text-seasalt/75">
             You have a business to run. That’s why we go above and beyond to

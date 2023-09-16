@@ -35,7 +35,7 @@ const About = ({ setInView }) => {
               who need worry-free web design & development services at a fair
               rate.
             </p>
-            <ScrollLink to="services" offset={-600}>
+            <ScrollLink to="services" offset={-200}>
               <PrimaryButton className="sm:w-[17rem] mg:w-[21rem] w-60 px-3 py-4 max-sm:text-sm">
                 See our affordable plans
               </PrimaryButton>
