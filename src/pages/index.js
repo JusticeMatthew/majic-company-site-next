@@ -101,9 +101,3 @@ export default function Home() {
     </ReactLenis>
   );
 }
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  };
-}
