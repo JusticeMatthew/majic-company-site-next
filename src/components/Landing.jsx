@@ -77,7 +77,7 @@ const Landing = () => {
         }}
         className="w-80 h-80 absolute left-[-20rem] bottom-40 pointer-events-none"
       >
-        <Image src="/images/logo-svg.svg" alt="company logo" fill />
+        <Image src="/images/logo-svg.svg" alt="company logo" fill priority />
       </motion.div>
       <motion.div
         initial={{ y: 0, opacity: 0 }}
@@ -96,7 +96,7 @@ const Landing = () => {
         }}
         className="w-80 h-80 absolute right-[-20rem] top-40 pointer-events-none"
       >
-        <Image src="/images/logo-svg.svg" alt="company logo" fill />
+        <Image src="/images/logo-svg.svg" alt="company logo" fill priority />
       </motion.div>
     </section>
   );
