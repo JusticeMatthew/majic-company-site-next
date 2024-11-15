@@ -71,7 +71,7 @@ const Contact = ({ setInView }) => {
       </div>
       <div className="flex flex-col w-full p-24 min-h-20 bg-seasalt rounded-2xl max-sg:items-center justify-evenly">
         {morphing && (
-          <svg id="filters">
+          <svg id="filters" className="absolute">
             <defs>
               <filter id="threshold">
                 <feColorMatrix
